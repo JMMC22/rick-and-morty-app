@@ -10,10 +10,14 @@ import Foundation
 class DefaultRickAndMortyRepository {
 
     private let remoteDatasource: RickAndMortyDatasource
+    private let favoritesDatasource: RickAndMortyFavoritesLocalDatasource
     private let errorMapper: AppErrorMapper
 
-    init(remoteDatasource: RickAndMortyDatasource, errorMapper: AppErrorMapper) {
+    init(remoteDatasource: RickAndMortyDatasource,
+         favoritesDatasource: RickAndMortyFavoritesLocalDatasource,
+         errorMapper: AppErrorMapper) {
         self.remoteDatasource = remoteDatasource
+        self.favoritesDatasource = favoritesDatasource
         self.errorMapper = errorMapper
     }
 }
@@ -26,9 +30,29 @@ extension DefaultRickAndMortyRepository: RickAndMortyRepository {
         switch result {
         case .success(let response):
             let characters = response.data.characters.results.map({ $0.toDomain() })
+
+            let mappedCharacters = characters.map { character in
+                var tempCharacter = character
+                tempCharacter.isFavorite = isFavoriteCharacter(id: character.id)
+                return tempCharacter
+            }
+
             return .success(characters)
         case .failure(let error):
             return .failure(errorMapper.map(error: error))
+        }
+    }
+}
+
+extension DefaultRickAndMortyRepository {
+    private func isFavoriteCharacter(id: String) -> Bool {
+        let isFavorite = favoritesDatasource.isFavoriteCharacter(id: id)
+
+        switch isFavorite {
+        case .success(let isFavorite):
+            return isFavorite
+        case .failure:
+            return false
         }
     }
 }

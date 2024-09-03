@@ -15,4 +15,5 @@ struct RickAndMortyCharacter {
     let gender: String
     let origin: RickAndMortyCharacterOrigin
     let image: String
+    var isFavorite: Bool
 }

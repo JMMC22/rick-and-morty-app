@@ -25,6 +25,7 @@ extension RickAndMortyCharacterDTO {
                               species: species,
                               gender: gender,
                               origin: origin.toDomain(),
-                              image: image)
+                              image: image,
+                              isFavorite: false)
     }
 }
