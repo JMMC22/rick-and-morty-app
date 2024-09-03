@@ -11,7 +11,9 @@ class AppErrorMapper {
 
     func map(error: Error) -> AppError {
         switch error {
-        case let requestError as RequestError:
+        case _ as RequestError:
+            return .generic
+        case _ as UserDefaultsError:
             return .generic
         default:
             return .unknown
