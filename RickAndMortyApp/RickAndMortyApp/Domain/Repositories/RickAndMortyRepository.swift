@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RickAndMortyRepository {
-    func fetchCharacters(page: Int) async -> Result<[RickAndMortyCharacter], AppError>
+    func fetchCharacters(page: Int) async -> Result<[SerieCharacter], AppError>
 }

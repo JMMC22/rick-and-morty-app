@@ -1,5 +1,5 @@
 //
-//  CharacterOrigin.swift
+//  SerieCharacterOrigin.swift
 //  RickAndMortyApp
 //
 //  Created by José María Márquez Crespo on 3/9/24.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct RickAndMortyCharacterOrigin {
+struct SerieCharacterOrigin {
     let name: String
 }

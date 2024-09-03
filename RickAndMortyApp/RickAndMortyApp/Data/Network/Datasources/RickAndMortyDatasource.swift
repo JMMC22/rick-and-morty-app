@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RickAndMortyRemoteDatasource {
-    func fetchCharacters(page: Int) async -> Result<RickAndMortyCharactersResponseDTO, RequestError>
+    func fetchCharacters(page: Int) async -> Result<SerieCharactersResponseDTO, RequestError>
 }
 
 class DefaultRickAndMortyRemoteDatasource{
@@ -22,15 +22,15 @@ class DefaultRickAndMortyRemoteDatasource{
 
 extension DefaultRickAndMortyRemoteDatasource: RickAndMortyRemoteDatasource {
 
-    func fetchCharacters(page: Int) async -> Result<RickAndMortyCharactersResponseDTO, RequestError> {
-        let request = RickAndMortyCharactersRequestDTO(page: page)
+    func fetchCharacters(page: Int) async -> Result<SerieCharactersResponseDTO, RequestError> {
+        let request = SerieCharactersRequestDTO(page: page)
         let endpoint = RickAndMortyEndpoint.characters(query: request.query)
 
         let result = await httpClient.request(endpoint: endpoint)
 
         switch result {
         case .success(let response):
-            guard let response = try? JSONDecoder().decode(RickAndMortyCharactersResponseDTO.self,
+            guard let response = try? JSONDecoder().decode(SerieCharactersResponseDTO.self,
                                                            from: response) else {
                 return .failure(.decode)
             }

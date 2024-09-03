@@ -1,5 +1,5 @@
 //
-//  CharactersRequestDTO.swift
+//  SerieCharactersRequestDTO.swift
 //  RickAndMortyApp
 //
 //  Created by José María Márquez Crespo on 3/9/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RickAndMortyCharactersRequestDTO: Codable {
+struct SerieCharactersRequestDTO: Codable {
 
     let page: Int
 

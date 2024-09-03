@@ -1,5 +1,5 @@
 //
-//  CharacterDTO.swift
+//  SerieCharacterDTO.swift
 //  RickAndMortyApp
 //
 //  Created by José María Márquez Crespo on 3/9/24.
@@ -7,19 +7,19 @@
 
 import Foundation
 
-struct RickAndMortyCharacterDTO: Decodable {
+struct SerieCharacterDTO: Decodable {
     let id: String
     let name: String
     let status: String
     let species: String
     let gender: String
-    let origin: RickAndMortyCharacterOriginDTO
+    let origin: SerieCharacterOriginDTO
     let image: String
 }
 
-extension RickAndMortyCharacterDTO {
-    func toDomain() -> RickAndMortyCharacter {
-        RickAndMortyCharacter(id: id,
+extension SerieCharacterDTO {
+    func toDomain() -> SerieCharacter {
+        SerieCharacter(id: id,
                               name: name,
                               status: status,
                               species: species,
