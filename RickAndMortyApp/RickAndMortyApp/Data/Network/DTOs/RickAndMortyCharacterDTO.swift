@@ -23,7 +23,7 @@ extension RickAndMortyCharacterDTO {
                               name: name,
                               status: status,
                               species: species,
-                              gender: gender,
+                              gender: RickAndMortyCharacterGender(rawValue: gender) ?? .unknown,
                               origin: origin.toDomain(),
                               image: image)
     }

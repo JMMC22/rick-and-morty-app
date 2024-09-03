@@ -18,8 +18,8 @@ class DefaultRickAndMortyRepository {
 
 extension DefaultRickAndMortyRepository: RickAndMortyRepository {
 
-    func fetchCharacters(page: Int) async -> Result<[RickAndMortyCharacter], RequestError> {
-        let result = await remoteDatasource.fetchCharacters(page: page)
+    func fetchCharacters(page: Int, gender: RickAndMortyCharacterGender? = nil) async -> Result<[RickAndMortyCharacter], RequestError> {
+        let result = await remoteDatasource.fetchCharacters(page: page, gender: gender?.rawValue)
 
         switch result {
         case .success(let response):

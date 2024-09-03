@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RickAndMortyRepository {
-    func fetchCharacters(page: Int) async -> Result<[RickAndMortyCharacter], RequestError>
+    func fetchCharacters(page: Int, gender: RickAndMortyCharacterGender?) async -> Result<[RickAndMortyCharacter], RequestError>
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RickAndMortyDatasource {
-    func fetchCharacters(page: Int) async -> Result<RickAndMortyCharactersResponseDTO, RequestError>
+    func fetchCharacters(page: Int, gender: String?) async -> Result<RickAndMortyCharactersResponseDTO, RequestError>
 }
 
 class DefaultRickAndMortyDatasource {
@@ -22,8 +22,8 @@ class DefaultRickAndMortyDatasource {
 
 extension DefaultRickAndMortyDatasource: RickAndMortyDatasource {
 
-    func fetchCharacters(page: Int) async -> Result<RickAndMortyCharactersResponseDTO, RequestError> {
-        let request = RickAndMortyCharactersRequestDTO(page: page)
+    func fetchCharacters(page: Int, gender: String? = nil) async -> Result<RickAndMortyCharactersResponseDTO, RequestError> {
+        let request = RickAndMortyCharactersRequestDTO(page: page, gender: gender)
         let endpoint = RickAndMortyEndpoint.characters(query: request.query)
 
         let result = await httpClient.request(endpoint: endpoint)

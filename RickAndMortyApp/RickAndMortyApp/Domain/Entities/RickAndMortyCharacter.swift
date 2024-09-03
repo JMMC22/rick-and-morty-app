@@ -12,7 +12,7 @@ struct RickAndMortyCharacter {
     let name: String
     let status: String
     let species: String
-    let gender: String
+    let gender: RickAndMortyCharacterGender
     let origin: RickAndMortyCharacterOrigin
     let image: String
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FetchCharacters {
-    func execute(page: Int) async -> Result<[RickAndMortyCharacter], RequestError>
+    func execute(page: Int, gender: RickAndMortyCharacterGender?) async -> Result<[RickAndMortyCharacter], RequestError>
 }
 
 class DefaultFetchCharacters {
@@ -22,7 +22,7 @@ class DefaultFetchCharacters {
 
 extension DefaultFetchCharacters: FetchCharacters {
 
-    func execute(page: Int = 1) async -> Result<[RickAndMortyCharacter], RequestError> {
-        return await rickAndMortyRepository.fetchCharacters(page: page)
+    func execute(page: Int = 1, gender: RickAndMortyCharacterGender? = nil) async -> Result<[RickAndMortyCharacter], RequestError> {
+        return await rickAndMortyRepository.fetchCharacters(page: page, gender: gender)
     }
 }

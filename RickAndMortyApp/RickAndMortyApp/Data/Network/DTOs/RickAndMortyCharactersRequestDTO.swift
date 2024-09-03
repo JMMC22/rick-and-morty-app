@@ -12,9 +12,9 @@ struct RickAndMortyCharactersRequestDTO: Codable {
     let page: Int
     let filter: String
 
-    init(page: Int, filter: RickAndMortyCharactersRequestFilter? = nil) {
+    init(page: Int, gender: String? = nil) {
         self.page = page
-        self.filter = filter?.buildFilters() ?? ""
+        self.filter = CharactersRequestFilter(gender: gender).buildFilters()
     }
 
     var query: String {
