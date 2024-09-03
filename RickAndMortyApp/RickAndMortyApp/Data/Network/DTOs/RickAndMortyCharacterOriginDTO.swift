@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CharacterOriginDTO: Decodable {
+struct RickAndMortyCharacterOriginDTO: Decodable {
     let name: String
 }

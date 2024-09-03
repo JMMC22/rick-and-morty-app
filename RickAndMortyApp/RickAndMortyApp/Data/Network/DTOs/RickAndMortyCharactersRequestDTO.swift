@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CharactersRequestDTO: Codable {
+struct RickAndMortyCharactersRequestDTO: Codable {
 
     let page: Int
 

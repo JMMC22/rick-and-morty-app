@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CharacterOrigin {
+struct RickAndMortyCharacterOrigin {
     let name: String
 }
