@@ -10,15 +10,17 @@ import Foundation
 class DefaultRickAndMortyRepository {
 
     private let remoteDatasource: RickAndMortyDatasource
+    private let errorMapper: AppErrorMapper
 
-    init(remoteDatasource: RickAndMortyDatasource) {
+    init(remoteDatasource: RickAndMortyDatasource, errorMapper: AppErrorMapper) {
         self.remoteDatasource = remoteDatasource
+        self.errorMapper = errorMapper
     }
 }
 
 extension DefaultRickAndMortyRepository: RickAndMortyRepository {
 
-    func fetchCharacters(page: Int) async -> Result<[RickAndMortyCharacter], RequestError> {
+    func fetchCharacters(page: Int) async -> Result<[RickAndMortyCharacter], AppError> {
         let result = await remoteDatasource.fetchCharacters(page: page)
 
         switch result {
@@ -26,7 +28,7 @@ extension DefaultRickAndMortyRepository: RickAndMortyRepository {
             let characters = response.data.characters.results.map({ $0.toDomain() })
             return .success(characters)
         case .failure(let error):
-            return .failure(error)
+            return .failure(errorMapper.map(error: error))
         }
     }
 }
