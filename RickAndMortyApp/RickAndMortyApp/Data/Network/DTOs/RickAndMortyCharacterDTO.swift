@@ -16,3 +16,15 @@ struct RickAndMortyCharacterDTO: Decodable {
     let origin: RickAndMortyCharacterOriginDTO
     let image: String
 }
+
+extension RickAndMortyCharacterDTO {
+    func toDomain() -> RickAndMortyCharacter {
+        RickAndMortyCharacter(id: id,
+                              name: name,
+                              status: status,
+                              species: species,
+                              gender: gender,
+                              origin: origin.toDomain(),
+                              image: image)
+    }
+}

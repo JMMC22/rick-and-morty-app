@@ -10,3 +10,9 @@ import Foundation
 struct RickAndMortyCharacterOriginDTO: Decodable {
     let name: String
 }
+
+extension RickAndMortyCharacterOriginDTO {
+    func toDomain() -> RickAndMortyCharacterOrigin {
+        RickAndMortyCharacterOrigin(name: name)
+    }
+}
