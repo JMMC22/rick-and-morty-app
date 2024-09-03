@@ -29,7 +29,7 @@
 		B553AC422C87144B0069C7CB /* DefaultRickAndMortyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553AC412C87144B0069C7CB /* DefaultRickAndMortyRepository.swift */; };
 		B553AC462C8715B90069C7CB /* FetchCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553AC452C8715B90069C7CB /* FetchCharacters.swift */; };
 		B59C27DF2C87288B00D2D01A /* RickAndMortyCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DE2C87288B00D2D01A /* RickAndMortyCharacterGender.swift */; };
-		B59C27E12C87292600D2D01A /* RickAndMortyCharactersRequestFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E02C87292600D2D01A /* RickAndMortyCharactersRequestFilter.swift */; };
+		B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		B553AC412C87144B0069C7CB /* DefaultRickAndMortyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRickAndMortyRepository.swift; sourceTree = "<group>"; };
 		B553AC452C8715B90069C7CB /* FetchCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCharacters.swift; sourceTree = "<group>"; };
 		B59C27DE2C87288B00D2D01A /* RickAndMortyCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyCharacterGender.swift; sourceTree = "<group>"; };
-		B59C27E02C87292600D2D01A /* RickAndMortyCharactersRequestFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyCharactersRequestFilter.swift; sourceTree = "<group>"; };
+		B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequestFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +236,7 @@
 				B553AC392C8710DC0069C7CB /* RickAndMortyCharacter.swift */,
 				B59C27DE2C87288B00D2D01A /* RickAndMortyCharacterGender.swift */,
 				B553AC3B2C8711440069C7CB /* RickAndMortyCharacterOrigin.swift */,
-				B59C27E02C87292600D2D01A /* RickAndMortyCharactersRequestFilter.swift */,
+				B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -405,7 +405,7 @@
 			files = (
 				B553AC362C870F710069C7CB /* RickAndMortyDatasource.swift in Sources */,
 				B553ABF42C86FF360069C7CB /* ContentView.swift in Sources */,
-				B59C27E12C87292600D2D01A /* RickAndMortyCharactersRequestFilter.swift in Sources */,
+				B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */,
 				B553AC332C870E060069C7CB /* RickAndMortyCharacterDTO.swift in Sources */,
 				B553AC3A2C8710DC0069C7CB /* RickAndMortyCharacter.swift in Sources */,
 				B553AC2A2C8707A30069C7CB /* RickAndMortyEndpoint.swift in Sources */,
