@@ -20,17 +20,6 @@ class DefaultFavoritesCharactersRepository {
 
 extension DefaultFavoritesCharactersRepository: FavoritesCharactersRepository {
 
-    func isFavoriteCharacter(id: String) -> Result<Bool, AppError> {
-        let result = localDatasource.isFavoriteCharacter(id: id)
-
-        switch result {
-        case .success(let response):
-            return .success(response)
-        case .failure(let error):
-            return .failure(errorMapper.map(error: error))
-        }
-    }
-
     func addFavoriteCharacter(id: String) -> Result<Bool, AppError> {
         let result = localDatasource.addFavoriteCharacter(id: id)
 

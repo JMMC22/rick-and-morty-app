@@ -9,7 +9,6 @@ import Foundation
 
 protocol FavoritesCharactersLocalDatasource {
     func fetchFavoritesCharacters() -> Result<[String], UserDefaultsError>
-    func isFavoriteCharacter(id: String) -> Result<Bool, UserDefaultsError>
     func addFavoriteCharacter(id: String) -> Result<Bool, UserDefaultsError>
     func removeFavoriteCharacter(id: String) -> Result<Bool, UserDefaultsError>
 }
@@ -31,18 +30,6 @@ extension DefaultFavoritesCharactersLocalDatasource: FavoritesCharactersLocalDat
         }
 
         return .success(result)
-    }
-
-    func isFavoriteCharacter(id: String) -> Result<Bool, UserDefaultsError> {
-        let result = fetchFavoritesCharacters()
-
-        switch result {
-        case .success(let favorites):
-            let isFavorite = favorites.contains(id)
-            return .success(isFavorite)
-        case .failure(let error):
-            return .failure(error)
-        }
     }
 
     func addFavoriteCharacter(id: String) -> Result<Bool, UserDefaultsError> {

@@ -31,29 +31,19 @@ extension DefaultCharactersRepository: CharactersRepository {
         case .success(let response):
             let characters = response.data.characters.results.map({ $0.toDomain() })
 
+            guard let favorites = try? favoritesDatasource.fetchFavoritesCharacters().get() else {
+                return .success(characters)
+            }
+
             let mappedCharacters = characters.map { character in
                 var tempCharacter = character
-                tempCharacter.isFavorite = isFavoriteCharacter(id: character.id)
+                tempCharacter.isFavorite = favorites.contains(tempCharacter.id)
                 return tempCharacter
             }
 
-            return .success(characters)
+            return .success(mappedCharacters)
         case .failure(let error):
             return .failure(errorMapper.map(error: error))
-        }
-    }
-}
-
-extension DefaultCharactersRepository {
-
-    private func isFavoriteCharacter(id: String) -> Bool {
-        let isFavorite = favoritesDatasource.isFavoriteCharacter(id: id)
-
-        switch isFavorite {
-        case .success(let isFavorite):
-            return isFavorite
-        case .failure:
-            return false
         }
     }
 }
