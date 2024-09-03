@@ -30,6 +30,8 @@
 		B553AC462C8715B90069C7CB /* FetchCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553AC452C8715B90069C7CB /* FetchCharacters.swift */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
+		B59C27F22C87808900D2D01A /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27F12C87808900D2D01A /* AppError.swift */; };
+		B59C27F52C8780B200D2D01A /* AppErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27F42C8780B200D2D01A /* AppErrorMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		B553AC452C8715B90069C7CB /* FetchCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCharacters.swift; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		B59C27F12C87808900D2D01A /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		B59C27F42C8780B200D2D01A /* AppErrorMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 		B553AC242C8706B20069C7CB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B59C27F32C8780A400D2D01A /* Mappers */,
 				B553AC252C8706B90069C7CB /* Network */,
 				B553AC402C87143C0069C7CB /* Repositories */,
 			);
@@ -234,6 +239,7 @@
 		B553AC382C8710D40069C7CB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				B59C27F12C87808900D2D01A /* AppError.swift */,
 				B553AC392C8710DC0069C7CB /* RickAndMortyCharacter.swift */,
 				B553AC3B2C8711440069C7CB /* RickAndMortyCharacterOrigin.swift */,
 			);
@@ -279,6 +285,14 @@
 				B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		B59C27F32C8780A400D2D01A /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				B59C27F42C8780B200D2D01A /* AppErrorMapper.swift */,
+			);
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +427,7 @@
 			files = (
 				B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */,
 				B553AC362C870F710069C7CB /* RickAndMortyDatasource.swift in Sources */,
+				B59C27F22C87808900D2D01A /* AppError.swift in Sources */,
 				B553ABF42C86FF360069C7CB /* ContentView.swift in Sources */,
 				B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */,
 				B553AC332C870E060069C7CB /* RickAndMortyCharacterDTO.swift in Sources */,
@@ -425,6 +440,7 @@
 				B553AC282C8706EF0069C7CB /* RickAndMortyCharactersRequestDTO.swift in Sources */,
 				B553AC462C8715B90069C7CB /* FetchCharacters.swift in Sources */,
 				B553AC2F2C870D660069C7CB /* RickAndMortyCharactersResponseDTO.swift in Sources */,
+				B59C27F52C8780B200D2D01A /* AppErrorMapper.swift in Sources */,
 				B553AC3F2C87129C0069C7CB /* RickAndMortyRepository.swift in Sources */,
 				B553AC212C8703300069C7CB /* HttpClient.swift in Sources */,
 				B553AC3C2C8711440069C7CB /* RickAndMortyCharacterOrigin.swift in Sources */,
