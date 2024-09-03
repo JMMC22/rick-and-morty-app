@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol RickAndMortyDatasource {
+protocol RickAndMortyRemoteDatasource {
     func fetchCharacters(page: Int) async -> Result<RickAndMortyCharactersResponseDTO, RequestError>
 }
 
-class DefaultRickAndMortyDatasource {
+class DefaultRickAndMortyRemoteDatasource{
 
     private let httpClient: HTTPClient
 
@@ -20,7 +20,7 @@ class DefaultRickAndMortyDatasource {
     }
 }
 
-extension DefaultRickAndMortyDatasource: RickAndMortyDatasource {
+extension DefaultRickAndMortyRemoteDatasource: RickAndMortyRemoteDatasource {
 
     func fetchCharacters(page: Int) async -> Result<RickAndMortyCharactersResponseDTO, RequestError> {
         let request = RickAndMortyCharactersRequestDTO(page: page)

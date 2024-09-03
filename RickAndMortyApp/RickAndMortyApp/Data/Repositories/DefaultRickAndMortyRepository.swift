@@ -9,11 +9,11 @@ import Foundation
 
 class DefaultRickAndMortyRepository {
 
-    private let remoteDatasource: RickAndMortyDatasource
+    private let remoteDatasource: RickAndMortyRemoteDatasource
     private let favoritesDatasource: RickAndMortyFavoritesLocalDatasource
     private let errorMapper: AppErrorMapper
 
-    init(remoteDatasource: RickAndMortyDatasource,
+    init(remoteDatasource: RickAndMortyRemoteDatasource,
          favoritesDatasource: RickAndMortyFavoritesLocalDatasource,
          errorMapper: AppErrorMapper) {
         self.remoteDatasource = remoteDatasource
