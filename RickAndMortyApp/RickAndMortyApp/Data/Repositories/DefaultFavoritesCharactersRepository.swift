@@ -1,5 +1,5 @@
 //
-//  DefaultRickAndMortyFavoritesRepository.swift
+//  DefaultFavoritesCharactersRepository.swift
 //  RickAndMortyApp
 //
 //  Created by José María Márquez Crespo on 3/9/24.
@@ -7,18 +7,18 @@
 
 import Foundation
 
-class DefaultRickAndMortyFavoritesRepository {
+class DefaultFavoritesCharactersRepository {
 
-    private let localDatasource: FavoriteCharacterLocalDatasource
+    private let localDatasource: FavoritesCharactersLocalDatasource
     private let errorMapper: AppErrorMapper
 
-    init(localDatasource: FavoriteCharacterLocalDatasource, errorMapper: AppErrorMapper) {
+    init(localDatasource: FavoritesCharactersLocalDatasource, errorMapper: AppErrorMapper) {
         self.localDatasource = localDatasource
         self.errorMapper = errorMapper
     }
 }
 
-extension DefaultRickAndMortyFavoritesRepository: RickAndMortyFavoritesRepository {
+extension DefaultFavoritesCharactersRepository: FavoritesCharactersRepository {
 
     func isFavoriteCharacter(id: String) -> Result<Bool, AppError> {
         let result = localDatasource.isFavoriteCharacter(id: id)

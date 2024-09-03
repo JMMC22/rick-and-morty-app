@@ -13,16 +13,16 @@ protocol FetchCharacters {
 
 class DefaultFetchCharacters {
 
-    private let rickAndMortyRepository: RickAndMortyRepository
+    private let charactersRepository: CharactersRepository
 
-    init(rickAndMortyRepository: RickAndMortyRepository) {
-        self.rickAndMortyRepository = rickAndMortyRepository
+    init(charactersRepository: CharactersRepository) {
+        self.charactersRepository = charactersRepository
     }
 }
 
 extension DefaultFetchCharacters: FetchCharacters {
 
     func execute(page: Int = 1) async -> Result<[SerieCharacter], AppError> {
-        return await rickAndMortyRepository.fetchCharacters(page: page)
+        return await charactersRepository.fetchCharacters(page: page)
     }
 }
