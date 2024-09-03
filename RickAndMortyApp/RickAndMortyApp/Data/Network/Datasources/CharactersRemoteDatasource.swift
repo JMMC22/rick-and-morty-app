@@ -1,5 +1,5 @@
 //
-//  RickAndMortyDatasource.swift
+//  CharactersRemoteDatasource.swift
 //  RickAndMortyApp
 //
 //  Created by José María Márquez Crespo on 3/9/24.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol RickAndMortyRemoteDatasource {
+protocol CharactersRemoteDatasource {
     func fetchCharacters(page: Int) async -> Result<SerieCharactersResponseDTO, RequestError>
 }
 
-class DefaultRickAndMortyRemoteDatasource{
+class DefaultCharactersRemoteDatasource {
 
     private let httpClient: HTTPClient
 
@@ -20,7 +20,7 @@ class DefaultRickAndMortyRemoteDatasource{
     }
 }
 
-extension DefaultRickAndMortyRemoteDatasource: RickAndMortyRemoteDatasource {
+extension DefaultCharactersRemoteDatasource: CharactersRemoteDatasource {
 
     func fetchCharacters(page: Int) async -> Result<SerieCharactersResponseDTO, RequestError> {
         let request = SerieCharactersRequestDTO(page: page)

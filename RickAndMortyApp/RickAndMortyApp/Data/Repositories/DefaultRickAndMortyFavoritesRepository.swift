@@ -9,10 +9,10 @@ import Foundation
 
 class DefaultRickAndMortyFavoritesRepository {
 
-    private let localDatasource: RickAndMortyFavoritesLocalDatasource
+    private let localDatasource: FavoriteCharacterLocalDatasource
     private let errorMapper: AppErrorMapper
 
-    init(localDatasource: RickAndMortyFavoritesLocalDatasource, errorMapper: AppErrorMapper) {
+    init(localDatasource: FavoriteCharacterLocalDatasource, errorMapper: AppErrorMapper) {
         self.localDatasource = localDatasource
         self.errorMapper = errorMapper
     }
