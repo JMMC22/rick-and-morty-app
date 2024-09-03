@@ -23,7 +23,7 @@ extension DefaultRickAndMortyRepository: RickAndMortyRepository {
 
         switch result {
         case .success(let response):
-            let characters = response.characters.results.map({ $0.toDomain() })
+            let characters = response.data.characters.results.map({ $0.toDomain() })
             return .success(characters)
         case .failure(let error):
             return .failure(error)

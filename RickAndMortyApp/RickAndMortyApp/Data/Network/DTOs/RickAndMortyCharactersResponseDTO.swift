@@ -8,9 +8,13 @@
 import Foundation
 
 struct RickAndMortyCharactersResponseDTO: Decodable {
-    let characters: RickAndMortyCharactersDataDTO
+    let data: RickAndMortyCharactersDataDTO
 }
 
 struct RickAndMortyCharactersDataDTO: Decodable {
+    let characters: RickAndMortyCharactersResultsDTO
+}
+
+struct RickAndMortyCharactersResultsDTO: Decodable {
     let results: [RickAndMortyCharacterDTO]
 }
