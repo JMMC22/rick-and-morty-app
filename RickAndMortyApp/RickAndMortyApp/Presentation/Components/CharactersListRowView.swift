@@ -48,7 +48,7 @@ struct CharactersListRowView: View {
 
                 Divider().frame(height: 12)
 
-                Text(serieCharacter.gender.rawValue)
+                Text(serieCharacter.gender.localized)
 
                 if serieCharacter.isFavorite {
                     Divider().frame(height: 12)

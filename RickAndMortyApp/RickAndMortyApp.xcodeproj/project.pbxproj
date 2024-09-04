@@ -66,6 +66,7 @@
 		B571434F2C887292001CDFEC /* HorizontalFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571434E2C887292001CDFEC /* HorizontalFilterView.swift */; };
 		B57143512C887907001CDFEC /* HorizontalFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143502C887907001CDFEC /* HorizontalFilterItemView.swift */; };
 		B57143532C88791F001CDFEC /* FilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143522C88791F001CDFEC /* FilterOption.swift */; };
+		B57143572C888083001CDFEC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B57143562C888083001CDFEC /* Localizable.xcstrings */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
 		B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */; };
@@ -161,6 +162,7 @@
 		B571434E2C887292001CDFEC /* HorizontalFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFilterView.swift; sourceTree = "<group>"; };
 		B57143502C887907001CDFEC /* HorizontalFilterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFilterItemView.swift; sourceTree = "<group>"; };
 		B57143522C88791F001CDFEC /* FilterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOption.swift; sourceTree = "<group>"; };
+		B57143562C888083001CDFEC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequestFilter.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				B553AC1C2C87029A0069C7CB /* Infrastructure */,
 				B5C6D5BD2C8828BC0065AFEA /* Presentation */,
 				B553ABF82C86FF370069C7CB /* Preview Content */,
+				B57143552C888061001CDFEC /* Resources */,
 			);
 			path = RickAndMortyApp;
 			sourceTree = "<group>";
@@ -489,6 +492,14 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		B57143552C888061001CDFEC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B57143562C888083001CDFEC /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B59C27D92C8724CB00D2D01A /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +646,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = B553ABE52C86FF360069C7CB;
 			packageReferences = (
@@ -667,6 +679,7 @@
 				B57143012C882F9C001CDFEC /* Roboto-Black.ttf in Resources */,
 				B57143022C882F9F001CDFEC /* Roboto-BlackItalic.ttf in Resources */,
 				B571430C2C882FB9001CDFEC /* Roboto-ThinItalic.ttf in Resources */,
+				B57143572C888083001CDFEC /* Localizable.xcstrings in Resources */,
 				B57143092C882FB1001CDFEC /* Roboto-MediumItalic.ttf in Resources */,
 				B571430B2C882FB6001CDFEC /* Roboto-Thin.ttf in Resources */,
 				B57143072C882FAB001CDFEC /* Roboto-Light.ttf in Resources */,
