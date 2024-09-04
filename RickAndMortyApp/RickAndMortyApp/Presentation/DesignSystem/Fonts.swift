@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum FontType: String {
-    case inter
+    case roboto
 
     var name: String {
         self.rawValue.capitalized

@@ -14,7 +14,7 @@ struct AppFont {
     let font: UIFont
 
     static func Roboto(_ size: CGFloat, weight: FontWeight) -> AppFont {
-        let font = UIFont.font(type: .inter, weight: weight, size: size)
+        let font = UIFont.font(type: .roboto, weight: weight, size: size)
         return AppFont(font: font)
     }
 }
