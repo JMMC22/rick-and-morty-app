@@ -31,12 +31,12 @@ final class UseCasesAssembly: Assembly {
         }
 
         // MARK: Get Favorites Characters ids
-        container.register(FetchFavoritesCharactersIds.self) { resolver in
+        container.register(GetFavoritesCharactersIds.self) { resolver in
             guard let favoritesRepository = resolver.resolve(FavoritesCharactersRepository.self) else {
                 fatalError("FavoritesCharactersRepository dependency could not be resolved")
             }
 
-            return DefaultFetchFavoritesCharactersIds(favoritesRepository: favoritesRepository)
+            return DefaultGetFavoritesCharactersIds(favoritesRepository: favoritesRepository)
         }
 
         // MARK: Add Favorite Character

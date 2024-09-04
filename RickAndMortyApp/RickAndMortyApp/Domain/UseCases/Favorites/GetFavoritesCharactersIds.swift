@@ -1,5 +1,5 @@
 //
-//  FetchFavoritesCharacters.swift
+//  GetFavoritesCharactersIds.swift
 //  RickAndMortyApp
 //
 //  Created by José María Márquez Crespo on 4/9/24.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol FetchFavoritesCharactersIds {
+protocol GetFavoritesCharactersIds {
     func execute() -> [String]
 }
 
-class DefaultFetchFavoritesCharactersIds {
+class DefaultGetFavoritesCharactersIds {
 
     private let favoritesRepository: FavoritesCharactersRepository
 
@@ -20,7 +20,7 @@ class DefaultFetchFavoritesCharactersIds {
     }
 }
 
-extension DefaultFetchFavoritesCharactersIds: FetchFavoritesCharactersIds {
+extension DefaultGetFavoritesCharactersIds: GetFavoritesCharactersIds {
 
     func execute() -> [String] {
         return favoritesRepository.getFavoritesCharactersIds()

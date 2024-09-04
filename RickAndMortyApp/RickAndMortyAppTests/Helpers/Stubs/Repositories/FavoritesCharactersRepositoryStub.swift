@@ -10,10 +10,16 @@ import Foundation
 
 class FavoritesCharactersRepositoryStub: FavoritesCharactersRepository {
 
+    private let listresult: [String]
     private let result: Bool
 
-    init(result: Bool) {
+    init(listresult: [String] = [], result: Bool = false) {
+        self.listresult = listresult
         self.result = result
+    }
+
+    func getFavoritesCharactersIds() -> [String] {
+        listresult
     }
 
     func addFavoriteCharacter(id: String) -> Bool {

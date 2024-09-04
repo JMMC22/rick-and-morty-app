@@ -13,16 +13,17 @@ class CharactersListViewModel: ObservableObject {
     @Published var selectedFilter: FilterOption
 
     private let fetchCharacters: FetchCharacters
-    private let fetchFavoritesCharactersIds: FetchFavoritesCharactersIds
+    private let getFavoritesCharactersIds: GetFavoritesCharactersIds
 
     private var nextPage: Int = 1
     private var didReachedEnd: Bool = false
 
     var filters: [FilterOption]
 
-    init(fetchCharacters: FetchCharacters, fetchFavoritesCharactersIds: FetchFavoritesCharactersIds) {
+    init(fetchCharacters: FetchCharacters,
+         getFavoritesCharactersIds: GetFavoritesCharactersIds) {
         self.fetchCharacters = fetchCharacters
-        self.fetchFavoritesCharactersIds = fetchFavoritesCharactersIds
+        self.getFavoritesCharactersIds = getFavoritesCharactersIds
         self.filters = SerieCharacterGender.buildFilterOptions()
         self.selectedFilter = FilterOption.all
     }
@@ -111,7 +112,7 @@ extension CharactersListViewModel {
     }
 
     private func getFavoriteIds() -> [String] {
-        return fetchFavoritesCharactersIds.execute()
+        return getFavoritesCharactersIds.execute()
     }
 }
 
