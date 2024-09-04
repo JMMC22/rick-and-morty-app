@@ -9,6 +9,7 @@ import Foundation
 
 protocol CharactersRemoteDatasource {
     func fetchCharacters(page: Int, gender: String?) async -> Result<SerieCharactersResponseDTO, RequestError>
+    func fetchCharacter(id: String) async -> Result<SerieCharacterDetailsResponseDTO, RequestError>
 }
 
 class DefaultCharactersRemoteDatasource {
@@ -31,6 +32,25 @@ extension DefaultCharactersRemoteDatasource: CharactersRemoteDatasource {
         switch result {
         case .success(let response):
             guard let response = try? JSONDecoder().decode(SerieCharactersResponseDTO.self,
+                                                           from: response) else {
+                return .failure(.decode)
+            }
+
+            return .success(response)
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+
+    func fetchCharacter(id: String) async -> Result<SerieCharacterDetailsResponseDTO, RequestError> {
+        let request = SerieCharacterDetailsRequestDTO(id: id)
+        let endpoint = RickAndMortyEndpoint.character(query: request.query)
+
+        let result = await httpClient.request(endpoint: endpoint)
+
+        switch result {
+        case .success(let response):
+            guard let response = try? JSONDecoder().decode(SerieCharacterDetailsResponseDTO.self,
                                                            from: response) else {
                 return .failure(.decode)
             }
