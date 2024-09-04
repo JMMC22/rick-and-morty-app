@@ -29,5 +29,23 @@ final class UseCasesAssembly: Assembly {
 
             return DefaultFetchCharacter(charactersRepository: charactersRepository)
         }
+
+        // MARK: Add Favorite Character
+        container.register(AddFavoriteCharacter.self) { resolver in
+            guard let favoritesRepository = resolver.resolve(FavoritesCharactersRepository.self) else {
+                fatalError("FavoritesCharactersRepository dependency could not be resolved")
+            }
+
+            return DefaultAddFavoriteCharacter(favoritesRepository: favoritesRepository)
+        }
+
+        // MARK: Remove Favorite Character
+        container.register(RemoveFavoriteCharacter.self) { resolver in
+            guard let favoritesRepository = resolver.resolve(FavoritesCharactersRepository.self) else {
+                fatalError("FavoritesCharactersRepository dependency could not be resolved")
+            }
+
+            return DefaultRemoveFavoriteCharacter(favoritesRepository: favoritesRepository)
+        }
     }
 }

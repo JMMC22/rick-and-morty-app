@@ -27,7 +27,18 @@ final class ViewModelsAssembly: Assembly {
                 fatalError("FetchCharacter dependency could not be resolved")
             }
 
-            return CharacterDetailsViewModel(id: id, fetchCharacter: fetchCharacter)
+            guard let addFavorite = resolver.resolve(AddFavoriteCharacter.self) else {
+                fatalError("AddFavoriteCharacter dependency could not be resolved")
+            }
+
+            guard let removeFavorite = resolver.resolve(RemoveFavoriteCharacter.self) else {
+                fatalError("RemoveFavoriteCharacter dependency could not be resolved")
+            }
+
+            return CharacterDetailsViewModel(id: id,
+                                             fetchCharacter: fetchCharacter,
+                                             addFavoriteCharacter: addFavorite,
+                                             removeFavoriteCharacter: removeFavorite)
         }
     }
 }

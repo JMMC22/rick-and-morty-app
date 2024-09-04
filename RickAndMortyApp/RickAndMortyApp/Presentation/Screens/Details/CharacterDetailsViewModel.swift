@@ -13,10 +13,17 @@ class CharacterDetailsViewModel: ObservableObject {
 
     private let id: String
     private let fetchCharacter: FetchCharacter
+    private let addFavoriteCharacter: AddFavoriteCharacter
+    private let removeFavoriteCharacter: RemoveFavoriteCharacter
 
-    init(id: String, fetchCharacter: FetchCharacter) {
+    init(id: String, 
+         fetchCharacter: FetchCharacter,
+         addFavoriteCharacter: AddFavoriteCharacter,
+         removeFavoriteCharacter: RemoveFavoriteCharacter) {
         self.id = id
         self.fetchCharacter = fetchCharacter
+        self.addFavoriteCharacter = addFavoriteCharacter
+        self.removeFavoriteCharacter = removeFavoriteCharacter
     }
 
     func viewDidLoad() async {

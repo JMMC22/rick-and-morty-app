@@ -362,8 +362,8 @@
 		B553AC432C8715A30069C7CB /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				B57143492C8866B6001CDFEC /* Favorites */,
 				B553AC442C8715AB0069C7CB /* Characters */,
+				B57143492C8866B6001CDFEC /* Favorites */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
