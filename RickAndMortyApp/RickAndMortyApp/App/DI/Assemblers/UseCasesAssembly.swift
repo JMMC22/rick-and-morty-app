@@ -17,8 +17,17 @@ final class UseCasesAssembly: Assembly {
             guard let charactersRepository = resolver.resolve(CharactersRepository.self) else {
                 fatalError("CharactersRepository dependency could not be resolved")
             }
-            
+
             return DefaultFetchCharacters(charactersRepository: charactersRepository)
+        }
+
+        // MARK: Fetch Character
+        container.register(FetchCharacter.self) { resolver in
+            guard let charactersRepository = resolver.resolve(CharactersRepository.self) else {
+                fatalError("CharactersRepository dependency could not be resolved")
+            }
+
+            return DefaultFetchCharacter(charactersRepository: charactersRepository)
         }
     }
 }
