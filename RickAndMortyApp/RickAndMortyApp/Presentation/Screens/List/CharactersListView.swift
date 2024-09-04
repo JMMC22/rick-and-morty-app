@@ -26,6 +26,11 @@ struct CharactersListView: View {
         .task {
             await viewModel.viewDidLoad()
         }
+        .onChange(of: viewModel.selectedFilter) {
+            Task {
+                await viewModel.viewDidLoad()
+            }
+        }
     }
 }
 
@@ -41,6 +46,9 @@ struct CharactersListContainerView: View {
 
     var body: some View {
         LazyVStack(spacing: 16) {
+
+            HorizontalFilterView(filters: viewModel.filters, selectedFilter: $viewModel.selectedFilter)
+
             ForEach(viewModel.serieCharacters) { serieCharacter in
                 CharactersListRowView(serieCharacter: serieCharacter)
                     .onTapGesture {
