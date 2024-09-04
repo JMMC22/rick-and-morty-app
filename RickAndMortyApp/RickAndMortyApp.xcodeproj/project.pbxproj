@@ -433,9 +433,9 @@
 				B57143202C8836B7001CDFEC /* DatasourcesAssembly.swift */,
 				B57143222C883706001CDFEC /* RepositoriesAssembly.swift */,
 				B57143242C883792001CDFEC /* UseCasesAssembly.swift */,
+				B57143472C8864DC001CDFEC /* UtilsAssembly.swift */,
 				B57143262C883B1D001CDFEC /* ViewModelsAssembly.swift */,
 				B57143282C883B57001CDFEC /* ViewsAssembly.swift */,
-				B57143472C8864DC001CDFEC /* UtilsAssembly.swift */,
 			);
 			path = Assemblers;
 			sourceTree = "<group>";
