@@ -22,8 +22,8 @@ final class ViewsAssembly: Assembly {
         }
 
         // MARK: Details View
-        container.register(CharacterDetailsView.self) { resolver in
-            guard let viewModel = resolver.resolve(CharacterDetailsViewModel.self) else {
+        container.register(CharacterDetailsView.self) { (resolver, id: String) in
+            guard let viewModel = resolver.resolve(CharacterDetailsViewModel.self, argument: id) else {
                 fatalError("CharacterDetailsViewModel dependency could not be resolved")
             }
 

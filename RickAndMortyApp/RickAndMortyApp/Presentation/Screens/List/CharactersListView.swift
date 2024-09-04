@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CharactersListView: View {
 
+    @EnvironmentObject private var appCoordinator: AppCoordinator
+
     @StateObject private var viewModel: CharactersListViewModel
 
     init(viewModel: CharactersListViewModel) {
@@ -17,7 +19,9 @@ struct CharactersListView: View {
 
     var body: some View {
         ScrollView {
-            CharactersListContainerView(viewModel: viewModel)
+            CharactersListContainerView(viewModel: viewModel) { page in
+                appCoordinator.push(page)
+            }
         }
         .task {
             await viewModel.viewDidLoad()
@@ -28,15 +32,20 @@ struct CharactersListView: View {
 struct CharactersListContainerView: View {
 
     @ObservedObject private var viewModel: CharactersListViewModel
+    private let navigate: (AppCoordinator.Page) -> Void
 
-    init(viewModel: CharactersListViewModel) {
+    init(viewModel: CharactersListViewModel, navigate: @escaping (AppCoordinator.Page) -> Void) {
         self._viewModel = ObservedObject(wrappedValue: viewModel)
+        self.navigate = navigate
     }
 
     var body: some View {
         LazyVStack(spacing: 16) {
             ForEach(viewModel.serieCharacters) { serieCharacter in
                 CharactersListRowView(serieCharacter: serieCharacter)
+                    .onTapGesture {
+                        navigate(.details(id: serieCharacter.id))
+                    }
             }
         }
         .padding(EdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16))

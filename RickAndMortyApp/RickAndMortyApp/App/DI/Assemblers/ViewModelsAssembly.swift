@@ -22,7 +22,7 @@ final class ViewModelsAssembly: Assembly {
         }
 
         // MARK: Details VM
-        container.register(CharacterDetailsViewModel.self) { resolver, id in
+        container.register(CharacterDetailsViewModel.self) { (resolver, id: String) in
             guard let fetchCharacter = resolver.resolve(FetchCharacter.self) else {
                 fatalError("FetchCharacter dependency could not be resolved")
             }
