@@ -52,7 +52,7 @@ extension AppCoordinator {
         case .list:
             DIContainer.shared.container.resolve(CharactersListView.self)
         case .details(let id):
-            Text("Details \(id)")
+            DIContainer.shared.container.resolve(CharacterDetailsView.self, argument: id)
         }
     }
 }

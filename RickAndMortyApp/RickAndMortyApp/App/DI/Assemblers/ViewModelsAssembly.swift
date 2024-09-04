@@ -20,5 +20,10 @@ final class ViewModelsAssembly: Assembly {
 
             return CharactersListViewModel(fetchCharacters: fetchCharacters)
         }
+
+        // MARK: Details VM
+        container.register(CharacterDetailsViewModel.self) { resolver, id in
+            return CharacterDetailsViewModel(id: id)
+        }
     }
 }
