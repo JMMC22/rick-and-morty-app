@@ -9,6 +9,7 @@ import Foundation
 
 enum RickAndMortyEndpoint {
     case characters(query: String)
+    case character(query: String)
 }
 
 extension RickAndMortyEndpoint: Endpoint {
@@ -31,7 +32,8 @@ extension RickAndMortyEndpoint: Endpoint {
 
     var body: [String: String]? {
         switch self {
-        case .characters(let query):
+        case .characters(let query),
+                .character(let query):
             return ["query": query]
         }
     }
