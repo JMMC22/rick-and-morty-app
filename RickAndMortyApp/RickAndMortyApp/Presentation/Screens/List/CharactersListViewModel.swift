@@ -7,4 +7,11 @@
 
 import Foundation
 
-class CharactersListViewModel: ObservableObject {}
+class CharactersListViewModel: ObservableObject {
+
+    private let fetchCharacters: FetchCharacters
+
+    init(fetchCharacters: FetchCharacters) {
+        self.fetchCharacters = fetchCharacters
+    }
+}

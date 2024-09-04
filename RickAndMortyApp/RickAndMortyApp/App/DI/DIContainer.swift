@@ -19,7 +19,9 @@ final class DIContainer {
         assembler = Assembler([
             DatasourcesAssembly(),
             RepositoriesAssembly(),
-            UseCasesAssembly()
+            UseCasesAssembly(),
+            ViewModelsAssembly(),
+            ViewsAssembly()
         ], container: container)
     }
 }

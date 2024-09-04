@@ -42,13 +42,15 @@
 		B571430C2C882FB9001CDFEC /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57142F92C882F21001CDFEC /* Roboto-ThinItalic.ttf */; };
 		B571430E2C883032001CDFEC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571430D2C883032001CDFEC /* Fonts.swift */; };
 		B57143102C88309A001CDFEC /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571430F2C88309A001CDFEC /* AppFont.swift */; };
+		B57143142C883124001CDFEC /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143132C883124001CDFEC /* CharactersListView.swift */; };
+		B57143162C88312C001CDFEC /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143152C88312C001CDFEC /* CharactersListViewModel.swift */; };
 		B571431A2C883653001CDFEC /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B57143192C883653001CDFEC /* Swinject */; };
 		B571431E2C883692001CDFEC /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571431D2C883692001CDFEC /* DIContainer.swift */; };
 		B57143212C8836B7001CDFEC /* DatasourcesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143202C8836B7001CDFEC /* DatasourcesAssembly.swift */; };
 		B57143232C883706001CDFEC /* RepositoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143222C883706001CDFEC /* RepositoriesAssembly.swift */; };
 		B57143252C883792001CDFEC /* UseCasesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143242C883792001CDFEC /* UseCasesAssembly.swift */; };
-		B57143142C883124001CDFEC /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143132C883124001CDFEC /* CharactersListView.swift */; };
-		B57143162C88312C001CDFEC /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143152C88312C001CDFEC /* CharactersListViewModel.swift */; };
+		B57143272C883B1D001CDFEC /* ViewModelsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143262C883B1D001CDFEC /* ViewModelsAssembly.swift */; };
+		B57143292C883B57001CDFEC /* ViewsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143282C883B57001CDFEC /* ViewsAssembly.swift */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
 		B59C27E82C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */; };
@@ -120,12 +122,14 @@
 		B57143002C882F52001CDFEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B571430D2C883032001CDFEC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		B571430F2C88309A001CDFEC /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		B57143132C883124001CDFEC /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
+		B57143152C88312C001CDFEC /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		B571431D2C883692001CDFEC /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		B57143202C8836B7001CDFEC /* DatasourcesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasourcesAssembly.swift; sourceTree = "<group>"; };
 		B57143222C883706001CDFEC /* RepositoriesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesAssembly.swift; sourceTree = "<group>"; };
 		B57143242C883792001CDFEC /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
-		B57143132C883124001CDFEC /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
-		B57143152C88312C001CDFEC /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
+		B57143262C883B1D001CDFEC /* ViewModelsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsAssembly.swift; sourceTree = "<group>"; };
+		B57143282C883B57001CDFEC /* ViewsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsAssembly.swift; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCharactersLocalDatasource.swift; sourceTree = "<group>"; };
@@ -360,6 +364,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B57143112C88310E001CDFEC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B57143122C883115001CDFEC /* List */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B57143122C883115001CDFEC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B57143132C883124001CDFEC /* CharactersListView.swift */,
+				B57143152C88312C001CDFEC /* CharactersListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		B571431B2C883683001CDFEC /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,25 +404,10 @@
 				B57143202C8836B7001CDFEC /* DatasourcesAssembly.swift */,
 				B57143222C883706001CDFEC /* RepositoriesAssembly.swift */,
 				B57143242C883792001CDFEC /* UseCasesAssembly.swift */,
+				B57143262C883B1D001CDFEC /* ViewModelsAssembly.swift */,
+				B57143282C883B57001CDFEC /* ViewsAssembly.swift */,
 			);
 			path = Assemblers;
-			sourceTree = "<group>";
-		};
-		B57143112C88310E001CDFEC /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				B57143122C883115001CDFEC /* List */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		B57143122C883115001CDFEC /* List */ = {
-			isa = PBXGroup;
-			children = (
-				B57143132C883124001CDFEC /* CharactersListView.swift */,
-				B57143152C88312C001CDFEC /* CharactersListViewModel.swift */,
-			);
-			path = List;
 			sourceTree = "<group>";
 		};
 		B59C27D92C8724CB00D2D01A /* Persistence */ = {
@@ -613,12 +619,14 @@
 				B553AC362C870F710069C7CB /* CharactersRemoteDatasource.swift in Sources */,
 				B5C6D5C02C8828DC0065AFEA /* AppCoordinator.swift in Sources */,
 				B59C27F22C87808900D2D01A /* AppError.swift in Sources */,
+				B57143292C883B57001CDFEC /* ViewsAssembly.swift in Sources */,
 				B57143252C883792001CDFEC /* UseCasesAssembly.swift in Sources */,
 				B57143212C8836B7001CDFEC /* DatasourcesAssembly.swift in Sources */,
 				B59C27F02C87701400D2D01A /* DefaultFavoritesCharactersRepository.swift in Sources */,
 				B553ABF42C86FF360069C7CB /* ContentView.swift in Sources */,
 				B59C27EE2C876FD000D2D01A /* FavoritesCharactersRepository .swift in Sources */,
 				B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */,
+				B57143272C883B1D001CDFEC /* ViewModelsAssembly.swift in Sources */,
 				B553AC332C870E060069C7CB /* SerieCharacterDTO.swift in Sources */,
 				B57143162C88312C001CDFEC /* CharactersListViewModel.swift in Sources */,
 				B553AC3A2C8710DC0069C7CB /* SerieCharacter.swift in Sources */,
