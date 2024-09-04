@@ -15,8 +15,24 @@ enum SerieCharacterGender: String, CaseIterable {
 }
 
 extension SerieCharacterGender {
+    
+    var localized: String {
+        switch self {
+        case .male:
+            return String(localized: "genre.male")
+        case .female:
+            return String(localized: "genre.female")
+        case .genderless:
+            return String(localized: "genre.genderless")
+        case .unknown:
+            return String(localized: "genre.unknown")
+        }
+    }
+}
+
+extension SerieCharacterGender {
     static func buildFilterOptions() -> [FilterOption] {
-        let genreFilters = SerieCharacterGender.allCases.map({ FilterOption(key: $0.rawValue, value: $0.rawValue )})
+        let genreFilters = SerieCharacterGender.allCases.map({ FilterOption(key: $0.rawValue, value: $0.localized )})
         return [FilterOption.all] + genreFilters
     }
 }
