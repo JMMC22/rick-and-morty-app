@@ -17,8 +17,12 @@ final class ViewModelsAssembly: Assembly {
             guard let fetchCharacters = resolver.resolve(FetchCharacters.self) else {
                 fatalError("FetchCharacters dependency could not be resolved")
             }
+            
+            guard let fetchCharactersIds = resolver.resolve(FetchFavoritesCharactersIds.self) else {
+                fatalError("FetchFavoritesCharactersIds dependency could not be resolved")
+            }
 
-            return CharactersListViewModel(fetchCharacters: fetchCharacters)
+            return CharactersListViewModel(fetchCharacters: fetchCharacters, fetchFavoritesCharactersIds: fetchCharactersIds)
         }
 
         // MARK: Details VM

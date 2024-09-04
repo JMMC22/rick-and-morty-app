@@ -13,13 +13,16 @@ class CharactersListViewModel: ObservableObject {
     @Published var selectedFilter: FilterOption
 
     private let fetchCharacters: FetchCharacters
+    private let fetchFavoritesCharactersIds: FetchFavoritesCharactersIds
+
     private var nextPage: Int = 1
     private var didReachedEnd: Bool = false
 
     var filters: [FilterOption]
 
-    init(fetchCharacters: FetchCharacters) {
+    init(fetchCharacters: FetchCharacters, fetchFavoritesCharactersIds: FetchFavoritesCharactersIds) {
         self.fetchCharacters = fetchCharacters
+        self.fetchFavoritesCharactersIds = fetchFavoritesCharactersIds
         self.filters = SerieCharacterGender.buildFilterOptions()
         self.selectedFilter = FilterOption.all
     }
@@ -27,6 +30,8 @@ class CharactersListViewModel: ObservableObject {
     func viewDidLoad() async {
         if serieCharacters.isEmpty {
             await fetchCharacters()
+        } else {
+            refreshCharacters()
         }
     }
 
@@ -36,7 +41,7 @@ class CharactersListViewModel: ObservableObject {
             await fetchCharacters()
         }
     }
-    
+
     func loadMoreContent(currentItem item: SerieCharacter) {
         let thresholdIndex = serieCharacters.index(serieCharacters.endIndex, offsetBy: -1 )
         let thresholdItem = serieCharacters[thresholdIndex]
@@ -68,15 +73,50 @@ extension CharactersListViewModel {
             didReachedEnd = true
         }
 
-        DispatchQueue.main.async {
-            self.serieCharacters = serieCharacters
-        }
+        processCharacters(serieCharacters)
     }
 
     private func handleFetchCharactersFailure(error: AppError) {
         print("||ERROR|| fetchCharacters error: \(error.localizedDescription)")
     }
+}
 
+// MARK: - Processing Characters
+extension CharactersListViewModel {
+
+    private func processCharacters(_ characters: [SerieCharacter]) {
+        let mappedCharacters = mapCharacters(characters)
+        DispatchQueue.main.async {
+            self.serieCharacters.append(contentsOf: mappedCharacters)
+        }
+    }
+
+    private func refreshCharacters() {
+        let mappedCharacters = mapCharacters(serieCharacters)
+        DispatchQueue.main.async {
+            self.serieCharacters = mappedCharacters
+        }
+    }
+
+    private func mapCharacters(_ serieCharacters: [SerieCharacter]) -> [SerieCharacter] {
+        let favoriteIds = getFavoriteIds()
+
+        let mappedCharacters = serieCharacters.map { character in
+            var updatedCharacter = character
+            updatedCharacter.isFavorite = favoriteIds.contains(updatedCharacter.id)
+            return updatedCharacter
+        }
+
+        return mappedCharacters
+    }
+
+    private func getFavoriteIds() -> [String] {
+        return fetchFavoritesCharactersIds.execute()
+    }
+}
+
+// MARK: - Filters
+extension CharactersListViewModel {
     private func getGenreBySelectedFilter() -> SerieCharacterGender? {
         let filterKey = isAllFilterSelected() ? "" : selectedFilter.key
         return SerieCharacterGender(rawValue: filterKey)
@@ -87,6 +127,7 @@ extension CharactersListViewModel {
     }
 }
 
+// MARK: - Reset Pagination
 extension CharactersListViewModel {
 
     private func reset() {
