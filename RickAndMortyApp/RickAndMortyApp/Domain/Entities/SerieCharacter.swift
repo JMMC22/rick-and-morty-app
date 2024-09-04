@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SerieCharacter {
+struct SerieCharacter: Identifiable {
     let id: String
     let name: String
     let status: String

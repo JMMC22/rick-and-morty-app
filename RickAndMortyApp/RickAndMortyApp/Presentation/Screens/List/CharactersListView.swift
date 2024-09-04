@@ -16,9 +16,28 @@ struct CharactersListView: View {
     }
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .task {
-                await viewModel.viewDidLoad()
+        ScrollView {
+            CharactersListContainerView(viewModel: viewModel)
+        }
+        .task {
+            await viewModel.viewDidLoad()
+        }
+    }
+}
+
+struct CharactersListContainerView: View {
+
+    @ObservedObject private var viewModel: CharactersListViewModel
+
+    init(viewModel: CharactersListViewModel) {
+        self._viewModel = ObservedObject(wrappedValue: viewModel)
+    }
+
+    var body: some View {
+        LazyVStack {
+            ForEach(viewModel.serieCharacters) { serieCharacter in
+                Text(serieCharacter.name)
             }
+        }
     }
 }

@@ -9,6 +9,8 @@ import Foundation
 
 class CharactersListViewModel: ObservableObject {
 
+    @Published var serieCharacters: [SerieCharacter] = []
+
     private let fetchCharacters: FetchCharacters
     private var page: Int = 1
 
@@ -27,15 +29,19 @@ extension CharactersListViewModel {
         let result = await fetchCharacters.execute(page: page)
         
         switch result {
-        case .success(let characters):
-            handleFetchCharactersSuccess(characters: characters)
+        case .success(let serieCharacters):
+            handleFetchCharactersSuccess(serieCharacters: serieCharacters)
         case .failure(let error):
             handleFetchCharactersFailure(error: error)
         }
     }
 
-    private func handleFetchCharactersSuccess(characters: [SerieCharacter]) {
-        print("||SUCCESS|| characters: \(characters.count)")
+    private func handleFetchCharactersSuccess(serieCharacters: [SerieCharacter]) {
+        print("||SUCCESS|| characters: \(serieCharacters.count)")
+        
+        DispatchQueue.main.async {
+            self.serieCharacters = serieCharacters
+        }
     }
 
     private func handleFetchCharactersFailure(error: AppError) {
