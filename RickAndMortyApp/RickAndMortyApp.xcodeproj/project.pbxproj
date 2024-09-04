@@ -57,6 +57,7 @@
 		B57143372C885016001CDFEC /* CharacterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143362C885016001CDFEC /* CharacterDetailsViewModel.swift */; };
 		B57143392C88522D001CDFEC /* SerieCharacterDetailsResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143382C88522D001CDFEC /* SerieCharacterDetailsResponseDTO.swift */; };
 		B571433C2C885270001CDFEC /* SerieCharacterDetailsRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571433B2C885270001CDFEC /* SerieCharacterDetailsRequestDTO.swift */; };
+		B571433E2C8853C3001CDFEC /* FetchCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571433D2C8853C3001CDFEC /* FetchCharacter.swift */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
 		B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */; };
@@ -143,6 +144,7 @@
 		B57143362C885016001CDFEC /* CharacterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewModel.swift; sourceTree = "<group>"; };
 		B57143382C88522D001CDFEC /* SerieCharacterDetailsResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieCharacterDetailsResponseDTO.swift; sourceTree = "<group>"; };
 		B571433B2C885270001CDFEC /* SerieCharacterDetailsRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieCharacterDetailsRequestDTO.swift; sourceTree = "<group>"; };
+		B571433D2C8853C3001CDFEC /* FetchCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCharacter.swift; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequestFilter.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 		B553AC442C8715AB0069C7CB /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				B571433D2C8853C3001CDFEC /* FetchCharacter.swift */,
 				B553AC452C8715B90069C7CB /* FetchCharacters.swift */,
 			);
 			path = RickAndMorty;
@@ -668,6 +671,7 @@
 				B57143272C883B1D001CDFEC /* ViewModelsAssembly.swift in Sources */,
 				B553AC332C870E060069C7CB /* SerieCharacterDTO.swift in Sources */,
 				B57143162C88312C001CDFEC /* CharactersListViewModel.swift in Sources */,
+				B571433E2C8853C3001CDFEC /* FetchCharacter.swift in Sources */,
 				B553AC3A2C8710DC0069C7CB /* SerieCharacter.swift in Sources */,
 				B5C6D5C52C8829C10065AFEA /* Colors.swift in Sources */,
 				B571433C2C885270001CDFEC /* SerieCharacterDetailsRequestDTO.swift in Sources */,
