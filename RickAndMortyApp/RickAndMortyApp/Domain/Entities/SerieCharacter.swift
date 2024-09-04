@@ -12,8 +12,8 @@ struct SerieCharacter: Identifiable {
     let name: String
     let status: String
     let species: String
-    let gender: String
+    let gender: SerieCharacterGender
     let origin: SerieCharacterOrigin
-    let image: String
+    let imageURL: URL?
     var isFavorite: Bool
 }

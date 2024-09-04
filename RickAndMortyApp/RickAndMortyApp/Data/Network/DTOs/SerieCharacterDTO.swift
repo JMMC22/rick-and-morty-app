@@ -20,12 +20,12 @@ struct SerieCharacterDTO: Decodable {
 extension SerieCharacterDTO {
     func toDomain() -> SerieCharacter {
         SerieCharacter(id: id,
-                              name: name,
-                              status: status,
-                              species: species,
-                              gender: gender,
-                              origin: origin.toDomain(),
-                              image: image,
-                              isFavorite: false)
+                       name: name,
+                       status: status,
+                       species: species,
+                       gender: SerieCharacterGender(rawValue: gender) ?? .unknown,
+                       origin: origin.toDomain(),
+                       imageURL: URL(string: image),
+                       isFavorite: false)
     }
 }

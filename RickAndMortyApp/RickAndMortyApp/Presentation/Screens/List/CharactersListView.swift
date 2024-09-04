@@ -34,10 +34,11 @@ struct CharactersListContainerView: View {
     }
 
     var body: some View {
-        LazyVStack {
+        LazyVStack(spacing: 16) {
             ForEach(viewModel.serieCharacters) { serieCharacter in
-                Text(serieCharacter.name)
+                CharactersListRowView(serieCharacter: serieCharacter)
             }
         }
+        .padding(EdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16))
     }
 }
