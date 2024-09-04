@@ -16,6 +16,7 @@ class AppCoordinator: ObservableObject {
 extension AppCoordinator {
 
     enum Page: Hashable, Identifiable {
+        case content
         case list
         case details(id: String)
         
@@ -49,6 +50,8 @@ extension AppCoordinator {
     @ViewBuilder
     func build(page: AppCoordinator.Page) -> some View {
         switch page {
+        case .content:
+            DIContainer.shared.container.resolve(ContentView.self)
         case .list:
             DIContainer.shared.container.resolve(CharactersListView.self)
         case .details(let id):

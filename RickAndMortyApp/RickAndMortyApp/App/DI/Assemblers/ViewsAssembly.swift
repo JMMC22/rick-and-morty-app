@@ -12,6 +12,15 @@ final class ViewsAssembly: Assembly {
 
     func assemble(container: Container) {
 
+        // MARK: Content View
+        container.register(ContentView.self) { resolver in
+            guard let deepLinkHanlder = resolver.resolve(DeepLinkHandler.self) else {
+                fatalError("DeepLinkHandler dependency could not be resolved")
+            }
+
+            return ContentView(deepLinkHandler: deepLinkHanlder)
+        }
+
         // MARK: List View
         container.register(CharactersListView.self) { resolver in
             guard let viewModel = resolver.resolve(CharactersListViewModel.self) else {

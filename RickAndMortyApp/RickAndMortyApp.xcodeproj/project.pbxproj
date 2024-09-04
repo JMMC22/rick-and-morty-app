@@ -59,6 +59,8 @@
 		B571433C2C885270001CDFEC /* SerieCharacterDetailsRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571433B2C885270001CDFEC /* SerieCharacterDetailsRequestDTO.swift */; };
 		B571433E2C8853C3001CDFEC /* FetchCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571433D2C8853C3001CDFEC /* FetchCharacter.swift */; };
 		B57143422C885B22001CDFEC /* DetailsInformationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143412C885B22001CDFEC /* DetailsInformationRowView.swift */; };
+		B57143462C886017001CDFEC /* DeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143452C886017001CDFEC /* DeepLinkHandler.swift */; };
+		B57143482C8864DC001CDFEC /* UtilsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143472C8864DC001CDFEC /* UtilsAssembly.swift */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
 		B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */; };
@@ -147,6 +149,8 @@
 		B571433B2C885270001CDFEC /* SerieCharacterDetailsRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieCharacterDetailsRequestDTO.swift; sourceTree = "<group>"; };
 		B571433D2C8853C3001CDFEC /* FetchCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCharacter.swift; sourceTree = "<group>"; };
 		B57143412C885B22001CDFEC /* DetailsInformationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInformationRowView.swift; sourceTree = "<group>"; };
+		B57143452C886017001CDFEC /* DeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkHandler.swift; sourceTree = "<group>"; };
+		B57143472C8864DC001CDFEC /* UtilsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsAssembly.swift; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequestFilter.swift; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 		B571431B2C883683001CDFEC /* App */ = {
 			isa = PBXGroup;
 			children = (
+				B57143442C886008001CDFEC /* DeepLinks */,
 				B571431C2C883689001CDFEC /* DI */,
 			);
 			path = App;
@@ -430,6 +435,7 @@
 				B57143242C883792001CDFEC /* UseCasesAssembly.swift */,
 				B57143262C883B1D001CDFEC /* ViewModelsAssembly.swift */,
 				B57143282C883B57001CDFEC /* ViewsAssembly.swift */,
+				B57143472C8864DC001CDFEC /* UtilsAssembly.swift */,
 			);
 			path = Assemblers;
 			sourceTree = "<group>";
@@ -450,6 +456,14 @@
 				B57143362C885016001CDFEC /* CharacterDetailsViewModel.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		B57143442C886008001CDFEC /* DeepLinks */ = {
+			isa = PBXGroup;
+			children = (
+				B57143452C886017001CDFEC /* DeepLinkHandler.swift */,
+			);
+			path = DeepLinks;
 			sourceTree = "<group>";
 		};
 		B59C27D92C8724CB00D2D01A /* Persistence */ = {
@@ -659,6 +673,7 @@
 			files = (
 				B571430E2C883032001CDFEC /* Fonts.swift in Sources */,
 				B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */,
+				B57143462C886017001CDFEC /* DeepLinkHandler.swift in Sources */,
 				B553AC362C870F710069C7CB /* CharactersRemoteDatasource.swift in Sources */,
 				B5C6D5C02C8828DC0065AFEA /* AppCoordinator.swift in Sources */,
 				B59C27F22C87808900D2D01A /* AppError.swift in Sources */,
@@ -671,6 +686,7 @@
 				B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */,
 				B59C27EE2C876FD000D2D01A /* FavoritesCharactersRepository .swift in Sources */,
 				B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */,
+				B57143482C8864DC001CDFEC /* UtilsAssembly.swift in Sources */,
 				B57143272C883B1D001CDFEC /* ViewModelsAssembly.swift in Sources */,
 				B553AC332C870E060069C7CB /* SerieCharacterDTO.swift in Sources */,
 				B57143162C88312C001CDFEC /* CharactersListViewModel.swift in Sources */,
