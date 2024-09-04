@@ -9,4 +9,5 @@ import Foundation
 
 protocol CharactersRepository {
     func fetchCharacters(page: Int, gender: SerieCharacterGender?) async -> Result<[SerieCharacter], AppError>
+    func fetchCharacter(id: String) async -> Result<SerieCharacter, AppError>
 }

@@ -46,4 +46,23 @@ extension DefaultCharactersRepository: CharactersRepository {
             return .failure(errorMapper.map(error: error))
         }
     }
+
+    func fetchCharacter(id: String) async -> Result<SerieCharacter, AppError> {
+        let result = await remoteDatasource.fetchCharacter(id: id)
+
+        switch result {
+        case .success(let response):
+            var character = response.data.character.toDomain()
+
+            guard let favorites = try? favoritesDatasource.fetchFavoritesCharacters().get() else {
+                return .success(character)
+            }
+
+            character.isFavorite = favorites.contains(character.id)
+
+            return .success(character)
+        case .failure(let error):
+            return .failure(errorMapper.map(error: error))
+        }
+    }
 }
