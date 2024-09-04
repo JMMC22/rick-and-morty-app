@@ -34,7 +34,6 @@
 		B553ABF42C86FF360069C7CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553ABF32C86FF360069C7CB /* ContentView.swift */; };
 		B553ABF62C86FF370069C7CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B553ABF52C86FF370069C7CB /* Assets.xcassets */; };
 		B553ABFA2C86FF370069C7CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B553ABF92C86FF370069C7CB /* Preview Assets.xcassets */; };
-		B553AC042C86FF380069C7CB /* RickAndMortyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553AC032C86FF380069C7CB /* RickAndMortyAppTests.swift */; };
 		B553AC0E2C86FF380069C7CB /* RickAndMortyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553AC0D2C86FF380069C7CB /* RickAndMortyAppUITests.swift */; };
 		B553AC102C86FF380069C7CB /* RickAndMortyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553AC0F2C86FF380069C7CB /* RickAndMortyAppUITestsLaunchTests.swift */; };
 		B553AC1F2C8703270069C7CB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553AC1E2C8703270069C7CB /* Endpoint.swift */; };
@@ -152,7 +151,6 @@
 		B553ABF72C86FF370069C7CB /* RickAndMortyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RickAndMortyApp.entitlements; sourceTree = "<group>"; };
 		B553ABF92C86FF370069C7CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B553ABFF2C86FF380069C7CB /* RickAndMortyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B553AC032C86FF380069C7CB /* RickAndMortyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAppTests.swift; sourceTree = "<group>"; };
 		B553AC092C86FF380069C7CB /* RickAndMortyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B553AC0D2C86FF380069C7CB /* RickAndMortyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAppUITests.swift; sourceTree = "<group>"; };
 		B553AC0F2C86FF380069C7CB /* RickAndMortyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -252,8 +250,8 @@
 		B530DA6E2C888F2C009D97A5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B530DA7D2C889C56009D97A5 /* Repositories */,
 				B530DA7C2C889C03009D97A5 /* Datasources */,
+				B530DA7D2C889C56009D97A5 /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -261,19 +259,9 @@
 		B530DA712C888F6B009D97A5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B530DA9A2C88AA9B009D97A5 /* AddFavoriteCharacterStub.swift */,
-				B530DA842C889F7F009D97A5 /* CharactersRemoteDatasourceStub.swift */,
-				B530DA912C88A6D5009D97A5 /* CharactersRepositoryStub.swift */,
-				B530DA762C889798009D97A5 /* DTOMocks.swift */,
-				B530DA862C88A092009D97A5 /* EntitiesMocks.swift */,
 				B530DA742C8892A4009D97A5 /* Equatable.swift */,
-				B530DA802C889D6E009D97A5 /* FavoritesCharactersLocalDatasourceStub.swift */,
-				B530DA8B2C88A582009D97A5 /* FavoritesCharactersRepositoryStub.swift */,
-				B530DAA02C88B36D009D97A5 /* FetchCharactersStub.swift */,
-				B530DA982C88AA3C009D97A5 /* FetchCharacterStub.swift */,
-				B530DA722C888F88009D97A5 /* HttpClientStub.swift */,
-				B530DA9C2C88AAD1009D97A5 /* RemoveFavoriteCharacterStub.swift */,
-				B530DA7A2C8899C6009D97A5 /* UserDefaultsManagerStub.swift */,
+				B530DAA82C88B66E009D97A5 /* Mocks */,
+				B530DAA22C88B61F009D97A5 /* Stubs */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -314,6 +302,72 @@
 				B530DA9E2C88B32B009D97A5 /* CharactersListViewModelTests.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B530DAA22C88B61F009D97A5 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				B530DAA52C88B63A009D97A5 /* Datasources */,
+				B530DAA62C88B658009D97A5 /* Network */,
+				B530DAA72C88B662009D97A5 /* Persistence */,
+				B530DAA42C88B632009D97A5 /* Repositories */,
+				B530DAA32C88B624009D97A5 /* UseCases */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		B530DAA32C88B624009D97A5 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				B530DA9A2C88AA9B009D97A5 /* AddFavoriteCharacterStub.swift */,
+				B530DAA02C88B36D009D97A5 /* FetchCharactersStub.swift */,
+				B530DA982C88AA3C009D97A5 /* FetchCharacterStub.swift */,
+				B530DA9C2C88AAD1009D97A5 /* RemoveFavoriteCharacterStub.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		B530DAA42C88B632009D97A5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B530DA912C88A6D5009D97A5 /* CharactersRepositoryStub.swift */,
+				B530DA8B2C88A582009D97A5 /* FavoritesCharactersRepositoryStub.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B530DAA52C88B63A009D97A5 /* Datasources */ = {
+			isa = PBXGroup;
+			children = (
+				B530DA842C889F7F009D97A5 /* CharactersRemoteDatasourceStub.swift */,
+				B530DA802C889D6E009D97A5 /* FavoritesCharactersLocalDatasourceStub.swift */,
+			);
+			path = Datasources;
+			sourceTree = "<group>";
+		};
+		B530DAA62C88B658009D97A5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B530DA722C888F88009D97A5 /* HttpClientStub.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B530DAA72C88B662009D97A5 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				B530DA7A2C8899C6009D97A5 /* UserDefaultsManagerStub.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		B530DAA82C88B66E009D97A5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B530DA762C889798009D97A5 /* DTOMocks.swift */,
+				B530DA862C88A092009D97A5 /* EntitiesMocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		B553ABE52C86FF360069C7CB = {
@@ -366,7 +420,6 @@
 		B553AC022C86FF380069C7CB /* RickAndMortyAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				B553AC032C86FF380069C7CB /* RickAndMortyAppTests.swift */,
 				B530DA6E2C888F2C009D97A5 /* Data */,
 				B530DA882C88A4F8009D97A5 /* Domain */,
 				B530DA712C888F6B009D97A5 /* Helpers */,
@@ -891,7 +944,6 @@
 				B530DAA12C88B36D009D97A5 /* FetchCharactersStub.swift in Sources */,
 				B530DA702C888F4E009D97A5 /* CharactersRemoteDatasourceTests.swift in Sources */,
 				B530DA7F2C889CA1009D97A5 /* FavoritesCharactersRepositoryTests.swift in Sources */,
-				B553AC042C86FF380069C7CB /* RickAndMortyAppTests.swift in Sources */,
 				B530DA8E2C88A655009D97A5 /* RemoveFavoriteCharacterTests.swift in Sources */,
 				B530DA8C2C88A582009D97A5 /* FavoritesCharactersRepositoryStub.swift in Sources */,
 				B530DA872C88A092009D97A5 /* EntitiesMocks.swift in Sources */,
