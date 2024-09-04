@@ -63,6 +63,9 @@
 		B57143482C8864DC001CDFEC /* UtilsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143472C8864DC001CDFEC /* UtilsAssembly.swift */; };
 		B571434B2C8866C2001CDFEC /* AddFavoriteCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571434A2C8866C2001CDFEC /* AddFavoriteCharacter.swift */; };
 		B571434D2C8866CC001CDFEC /* RemoveFavoriteCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571434C2C8866CC001CDFEC /* RemoveFavoriteCharacter.swift */; };
+		B571434F2C887292001CDFEC /* HorizontalFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571434E2C887292001CDFEC /* HorizontalFilterView.swift */; };
+		B57143512C887907001CDFEC /* HorizontalFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143502C887907001CDFEC /* HorizontalFilterItemView.swift */; };
+		B57143532C88791F001CDFEC /* FilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143522C88791F001CDFEC /* FilterOption.swift */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
 		B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */; };
@@ -155,6 +158,9 @@
 		B57143472C8864DC001CDFEC /* UtilsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsAssembly.swift; sourceTree = "<group>"; };
 		B571434A2C8866C2001CDFEC /* AddFavoriteCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteCharacter.swift; sourceTree = "<group>"; };
 		B571434C2C8866CC001CDFEC /* RemoveFavoriteCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteCharacter.swift; sourceTree = "<group>"; };
+		B571434E2C887292001CDFEC /* HorizontalFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFilterView.swift; sourceTree = "<group>"; };
+		B57143502C887907001CDFEC /* HorizontalFilterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFilterItemView.swift; sourceTree = "<group>"; };
+		B57143522C88791F001CDFEC /* FilterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOption.swift; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequestFilter.swift; sourceTree = "<group>"; };
@@ -334,6 +340,7 @@
 			children = (
 				B59C27F12C87808900D2D01A /* AppError.swift */,
 				B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */,
+				B57143522C88791F001CDFEC /* FilterOption.swift */,
 				B553AC392C8710DC0069C7CB /* SerieCharacter.swift */,
 				B571432F2C884739001CDFEC /* SerieCharacterGender.swift */,
 				B553AC3B2C8711440069C7CB /* SerieCharacterOrigin.swift */,
@@ -450,6 +457,8 @@
 			children = (
 				B571432D2C884350001CDFEC /* CharactersListRowView.swift */,
 				B57143412C885B22001CDFEC /* DetailsInformationRowView.swift */,
+				B57143502C887907001CDFEC /* HorizontalFilterItemView.swift */,
+				B571434E2C887292001CDFEC /* HorizontalFilterView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -696,6 +705,7 @@
 				B57143212C8836B7001CDFEC /* DatasourcesAssembly.swift in Sources */,
 				B59C27F02C87701400D2D01A /* DefaultFavoritesCharactersRepository.swift in Sources */,
 				B57143352C88500F001CDFEC /* CharacterDetailsView.swift in Sources */,
+				B57143532C88791F001CDFEC /* FilterOption.swift in Sources */,
 				B553ABF42C86FF360069C7CB /* ContentView.swift in Sources */,
 				B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */,
 				B59C27EE2C876FD000D2D01A /* FavoritesCharactersRepository .swift in Sources */,
@@ -710,7 +720,9 @@
 				B5C6D5C52C8829C10065AFEA /* Colors.swift in Sources */,
 				B571433C2C885270001CDFEC /* SerieCharacterDetailsRequestDTO.swift in Sources */,
 				B57143392C88522D001CDFEC /* SerieCharacterDetailsResponseDTO.swift in Sources */,
+				B571434F2C887292001CDFEC /* HorizontalFilterView.swift in Sources */,
 				B553AC2A2C8707A30069C7CB /* RickAndMortyEndpoint.swift in Sources */,
+				B57143512C887907001CDFEC /* HorizontalFilterItemView.swift in Sources */,
 				B571434B2C8866C2001CDFEC /* AddFavoriteCharacter.swift in Sources */,
 				B59C27EC2C8741E300D2D01A /* UserDefaultsError.swift in Sources */,
 				B57143302C884739001CDFEC /* SerieCharacterGender.swift in Sources */,
