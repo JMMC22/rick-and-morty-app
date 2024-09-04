@@ -23,6 +23,7 @@ struct CharactersListView: View {
                 appCoordinator.push(page)
             }
         }
+        .errorAlert(error: $viewModel.error)
         .task {
             await viewModel.viewDidLoad()
         }

@@ -11,6 +11,7 @@ class CharacterDetailsViewModel: ObservableObject {
 
     @Published var serieCharacter: SerieCharacter?
     @Published var isFavorite: Bool = false
+    @Published var error: AppError?
 
     private let id: String
     private let fetchCharacter: FetchCharacter
@@ -46,8 +47,6 @@ extension CharacterDetailsViewModel {
     }
 
     private func handleFetchCharacterSuccess(serieCharacter: SerieCharacter) {
-        print("||SUCCESS|| character: \(serieCharacter.id)")
-
         DispatchQueue.main.async {
             self.serieCharacter = serieCharacter
             self.isFavorite = serieCharacter.isFavorite
@@ -55,7 +54,9 @@ extension CharacterDetailsViewModel {
     }
 
     private func handleFetchCharacterFailure(error: AppError) {
-        print("||ERROR|| fetchCharacter error: \(error.localizedDescription)")
+        DispatchQueue.main.async {
+            self.error = error
+        }
     }
 }
 

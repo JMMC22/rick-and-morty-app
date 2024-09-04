@@ -19,6 +19,7 @@ struct CharacterDetailsView: View {
         ScrollView {
             CharacterDetailsContainerView(viewModel: viewModel)
         }
+        .errorAlert(error: $viewModel.error)
         .task {
             await viewModel.viewDidLoad()
         }

@@ -1,6 +1,43 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Error" : {
+
+    },
+    "error.generic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oops, there seems to have been an error"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Vaya, parece que ha habido un error"
+          }
+        }
+      }
+    },
+    "error.unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oops, there seems to have been an  unexpected error"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Vaya, parece que ha habido un error inesperado"
+          }
+        }
+      }
+    },
     "filter.all.value" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -84,6 +121,9 @@
           }
         }
       }
+    },
+    "OK" : {
+
     }
   },
   "version" : "1.0"
