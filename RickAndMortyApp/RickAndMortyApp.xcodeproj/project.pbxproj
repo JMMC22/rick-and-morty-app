@@ -40,6 +40,7 @@
 		B571430A2C882FB4001CDFEC /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57142F72C882F21001CDFEC /* Roboto-Regular.ttf */; };
 		B571430B2C882FB6001CDFEC /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57142F62C882F21001CDFEC /* Roboto-Thin.ttf */; };
 		B571430C2C882FB9001CDFEC /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57142F92C882F21001CDFEC /* Roboto-ThinItalic.ttf */; };
+		B571430E2C883032001CDFEC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571430D2C883032001CDFEC /* Fonts.swift */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
 		B59C27E82C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */; };
@@ -109,6 +110,7 @@
 		B57142FE2C882F21001CDFEC /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		B57142FF2C882F21001CDFEC /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		B57143002C882F52001CDFEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B571430D2C883032001CDFEC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCharactersLocalDatasource.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			children = (
 				B5C6D5C42C8829C10065AFEA /* Colors.swift */,
 				B57142F32C882F07001CDFEC /* Fonts */,
+				B571430D2C883032001CDFEC /* Fonts.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B571430E2C883032001CDFEC /* Fonts.swift in Sources */,
 				B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */,
 				B553AC362C870F710069C7CB /* CharactersRemoteDatasource.swift in Sources */,
 				B5C6D5C02C8828DC0065AFEA /* AppCoordinator.swift in Sources */,
