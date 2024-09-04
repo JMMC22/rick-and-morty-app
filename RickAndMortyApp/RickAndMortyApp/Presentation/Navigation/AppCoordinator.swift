@@ -50,7 +50,7 @@ extension AppCoordinator {
     func build(page: AppCoordinator.Page) -> some View {
         switch page {
         case .list:
-            Text("List")
+            DIContainer.shared.container.resolve(CharactersListView.self)
         case .details(let id):
             Text("Details \(id)")
         }
