@@ -31,7 +31,9 @@ struct CharactersListRowView: View {
                 .frame(width: 50, height: 50)
                 .clipShape(Circle())
         } placeholder: {
-            ProgressView()
+            Circle()
+                .fill(.textLightGray.opacity(0.4))
+                .frame(width: 50, height: 50)
         }
     }
 

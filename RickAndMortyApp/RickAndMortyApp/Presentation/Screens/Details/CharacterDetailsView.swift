@@ -48,7 +48,9 @@ struct CharacterDetailsContainerView: View {
                 .scaledToFill()
                 .frame(height: 300)
         } placeholder: {
-            ProgressView()
+            Rectangle()
+                .fill(.textLightGray.opacity(0.4))
+                .frame(height: 300)
         }
         .clipShape(RoundedRectangle(cornerRadius: 20))
     }
