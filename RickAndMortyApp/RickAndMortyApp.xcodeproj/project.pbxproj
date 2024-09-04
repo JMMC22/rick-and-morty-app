@@ -41,6 +41,7 @@
 		B571430B2C882FB6001CDFEC /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57142F62C882F21001CDFEC /* Roboto-Thin.ttf */; };
 		B571430C2C882FB9001CDFEC /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57142F92C882F21001CDFEC /* Roboto-ThinItalic.ttf */; };
 		B571430E2C883032001CDFEC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571430D2C883032001CDFEC /* Fonts.swift */; };
+		B57143102C88309A001CDFEC /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571430F2C88309A001CDFEC /* AppFont.swift */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
 		B59C27E82C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */; };
@@ -111,6 +112,7 @@
 		B57142FF2C882F21001CDFEC /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		B57143002C882F52001CDFEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B571430D2C883032001CDFEC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		B571430F2C88309A001CDFEC /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCharactersLocalDatasource.swift; sourceTree = "<group>"; };
@@ -390,9 +392,10 @@
 		B5C6D5C32C8829A90065AFEA /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				B571430F2C88309A001CDFEC /* AppFont.swift */,
 				B5C6D5C42C8829C10065AFEA /* Colors.swift */,
-				B57142F32C882F07001CDFEC /* Fonts */,
 				B571430D2C883032001CDFEC /* Fonts.swift */,
+				B57142F32C882F07001CDFEC /* Fonts */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				B553AC282C8706EF0069C7CB /* SerieCharactersRequestDTO.swift in Sources */,
 				B553AC462C8715B90069C7CB /* FetchCharacters.swift in Sources */,
 				B553AC2F2C870D660069C7CB /* SerieCharactersResponseDTO.swift in Sources */,
+				B57143102C88309A001CDFEC /* AppFont.swift in Sources */,
 				B59C27F52C8780B200D2D01A /* AppErrorMapper.swift in Sources */,
 				B553AC3F2C87129C0069C7CB /* CharactersRepository.swift in Sources */,
 				B553AC212C8703300069C7CB /* HttpClient.swift in Sources */,
