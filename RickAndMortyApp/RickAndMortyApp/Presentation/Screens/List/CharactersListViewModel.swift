@@ -13,7 +13,8 @@ class CharactersListViewModel: ObservableObject {
     @Published var selectedFilter: FilterOption
 
     private let fetchCharacters: FetchCharacters
-    private var page: Int = 1
+    private var nextPage: Int = 1
+    private var didReachedEnd: Bool = false
 
     var filters: [FilterOption]
 
@@ -24,16 +25,33 @@ class CharactersListViewModel: ObservableObject {
     }
 
     func viewDidLoad() async {
-        await fetchCharacters(page: page)
+        await fetchCharacters()
+    }
+
+    func loadFiltered() {
+        reset()
+        Task {
+            await fetchCharacters()
+        }
+    }
+    
+    func loadMoreContent(currentItem item: SerieCharacter) {
+        let thresholdIndex = serieCharacters.index(serieCharacters.endIndex, offsetBy: -1 )
+        let thresholdItem = serieCharacters[thresholdIndex]
+
+        if thresholdItem.id == item.id, !didReachedEnd {
+            nextPage += 1
+            Task { await fetchCharacters() }
+        }
     }
 }
 
 extension CharactersListViewModel {
 
-    func fetchCharacters(page: Int) async {
+    func fetchCharacters() async {
         let gender = getGenreBySelectedFilter()
 
-        let result = await fetchCharacters.execute(page: page, gender: gender)
+        let result = await fetchCharacters.execute(page: nextPage, gender: gender)
 
         switch result {
         case .success(let serieCharacters):
@@ -44,10 +62,12 @@ extension CharactersListViewModel {
     }
 
     private func handleFetchCharactersSuccess(serieCharacters: [SerieCharacter]) {
-        print("||SUCCESS|| characters: \(serieCharacters.count)")
-        
+        if serieCharacters.isEmpty {
+            didReachedEnd = true
+        }
+
         DispatchQueue.main.async {
-            self.serieCharacters = serieCharacters
+            self.serieCharacters.append(contentsOf: serieCharacters)
         }
     }
 
@@ -62,5 +82,20 @@ extension CharactersListViewModel {
 
     private func isAllFilterSelected() -> Bool {
         return selectedFilter.key == FilterOption.all.key
+    }
+}
+
+extension CharactersListViewModel {
+
+    private func reset() {
+        resetPagination()
+        DispatchQueue.main.async {
+            self.serieCharacters = []
+        }
+    }
+
+    private func resetPagination() {
+        nextPage = 1
+        didReachedEnd = false
     }
 }

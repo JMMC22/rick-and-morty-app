@@ -27,9 +27,7 @@ struct CharactersListView: View {
             await viewModel.viewDidLoad()
         }
         .onChange(of: viewModel.selectedFilter) {
-            Task {
-                await viewModel.viewDidLoad()
-            }
+            viewModel.loadFiltered()
         }
     }
 }
@@ -51,9 +49,8 @@ struct CharactersListContainerView: View {
 
             ForEach(viewModel.serieCharacters) { serieCharacter in
                 CharactersListRowView(serieCharacter: serieCharacter)
-                    .onTapGesture {
-                        navigate(.details(id: serieCharacter.id))
-                    }
+                    .onAppear { viewModel.loadMoreContent(currentItem: serieCharacter) }
+                    .onTapGesture { navigate(.details(id: serieCharacter.id)) }
             }
         }
         .padding(EdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16))
