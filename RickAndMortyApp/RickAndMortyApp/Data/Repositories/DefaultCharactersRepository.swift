@@ -24,8 +24,8 @@ class DefaultCharactersRepository {
 
 extension DefaultCharactersRepository: CharactersRepository {
 
-    func fetchCharacters(page: Int) async -> Result<[SerieCharacter], AppError> {
-        let result = await remoteDatasource.fetchCharacters(page: page)
+    func fetchCharacters(page: Int, gender: SerieCharacterGender?) async -> Result<[SerieCharacter], AppError> {
+        let result = await remoteDatasource.fetchCharacters(page: page, gender: gender?.rawValue)
 
         switch result {
         case .success(let response):

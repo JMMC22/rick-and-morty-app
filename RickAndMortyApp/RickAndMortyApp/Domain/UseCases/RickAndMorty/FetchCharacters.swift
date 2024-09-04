@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FetchCharacters {
-    func execute(page: Int) async -> Result<[SerieCharacter], AppError>
+    func execute(page: Int, gender: SerieCharacterGender?) async -> Result<[SerieCharacter], AppError>
 }
 
 class DefaultFetchCharacters {
@@ -22,7 +22,7 @@ class DefaultFetchCharacters {
 
 extension DefaultFetchCharacters: FetchCharacters {
 
-    func execute(page: Int = 1) async -> Result<[SerieCharacter], AppError> {
-        return await charactersRepository.fetchCharacters(page: page)
+    func execute(page: Int = 1, gender: SerieCharacterGender? = nil) async -> Result<[SerieCharacter], AppError> {
+        return await charactersRepository.fetchCharacters(page: page, gender: gender)
     }
 }
