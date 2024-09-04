@@ -41,9 +41,17 @@ struct CharactersListRowView: View {
                 .AppFont(.Roboto(12, weight: .bold), color: .darkGray)
 
             HStack(spacing: 4) {
+
                 Text(serieCharacter.origin.name)
+
                 Divider().frame(height: 12)
+
                 Text(serieCharacter.gender.rawValue)
+
+                if serieCharacter.isFavorite {
+                    Divider().frame(height: 12)
+                    Image(systemName: "heart.fill")
+                }
             }
             .AppFont(.Roboto(12, weight: .light), color: .lightGray)
         }
