@@ -18,7 +18,7 @@ struct DetailsInformationRowView: View {
     }
 
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: 8) {
             Image(icon)
                 .resizable()
                 .frame(width: 16, height: 16)

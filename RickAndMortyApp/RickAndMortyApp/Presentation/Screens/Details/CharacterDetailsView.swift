@@ -57,25 +57,40 @@ struct CharacterDetailsContainerView: View {
 
     private func content() -> some View {
         VStack(alignment: .leading, spacing: 12) {
-
-            HStack {
-
-                Text(viewModel.serieCharacter?.name ?? "")
-                    .AppFont(.Roboto(16, weight: .bold), color: .darkGray)
-
-                Spacer()
-
-                Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
-                    .onTapGesture {
-                        viewModel.updateFavoriteSerieCharacter()
-                    }
-            }
-
-            VStack(alignment: .leading, spacing: 4) {
-                DetailsInformationRowView(text: viewModel.serieCharacter?.status, icon: "pulse")
-                DetailsInformationRowView(text: viewModel.serieCharacter?.species, icon: "alien")
-                DetailsInformationRowView(text: viewModel.serieCharacter?.origin.name, icon: "planet")
-            }
+            header()
+            information()
         }
+    }
+
+    private func header() -> some View {
+        HStack {
+
+            Text(viewModel.serieCharacter?.name ?? "")
+                .AppFont(.Roboto(24, weight: .bold), color: .darkGray)
+
+            Spacer()
+
+            Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+                .resizable()
+                .foregroundStyle(Color.mutantPink)
+                .frame(width: 24, height: 24)
+                .onTapGesture {
+                    viewModel.updateFavoriteSerieCharacter()
+                }
+        }
+    }
+
+    private func information() -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            DetailsInformationRowView(text: viewModel.serieCharacter?.status, icon: "pulse")
+            DetailsInformationRowView(text: viewModel.serieCharacter?.species, icon: "alien")
+            DetailsInformationRowView(text: viewModel.serieCharacter?.origin.name, icon: "planet")
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(.textLightGray.opacity(0.1))
+        )
     }
 }
