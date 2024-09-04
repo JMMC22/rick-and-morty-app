@@ -25,7 +25,9 @@ class CharactersListViewModel: ObservableObject {
     }
 
     func viewDidLoad() async {
-        await fetchCharacters()
+        if serieCharacters.isEmpty {
+            await fetchCharacters()
+        }
     }
 
     func loadFiltered() {
@@ -67,7 +69,7 @@ extension CharactersListViewModel {
         }
 
         DispatchQueue.main.async {
-            self.serieCharacters.append(contentsOf: serieCharacters)
+            self.serieCharacters = serieCharacters
         }
     }
 

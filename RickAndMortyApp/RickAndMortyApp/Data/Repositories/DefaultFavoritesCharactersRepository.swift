@@ -18,6 +18,10 @@ class DefaultFavoritesCharactersRepository {
 
 extension DefaultFavoritesCharactersRepository: FavoritesCharactersRepository {
 
+    func getFavoritesCharactersIds() -> [String] {
+        return localDatasource.fetchFavoritesCharacters()
+    }
+
     func addFavoriteCharacter(id: String) -> Bool{
         return localDatasource.addFavoriteCharacter(id: id)
     }

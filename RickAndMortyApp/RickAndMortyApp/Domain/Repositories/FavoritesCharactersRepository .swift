@@ -8,6 +8,7 @@
 import Foundation
 
 protocol FavoritesCharactersRepository  {
+    func getFavoritesCharactersIds() -> [String]
     func addFavoriteCharacter(id: String) -> Bool
     func removeFavoriteCharacter(id: String) -> Bool
 }
