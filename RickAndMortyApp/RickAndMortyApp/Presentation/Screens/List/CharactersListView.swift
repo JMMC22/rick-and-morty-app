@@ -43,16 +43,29 @@ struct CharactersListContainerView: View {
     }
 
     var body: some View {
-        LazyVStack(spacing: 16) {
+        VStack(spacing: 16) {
 
             HorizontalFilterView(filters: viewModel.filters, selectedFilter: $viewModel.selectedFilter)
 
-            ForEach(viewModel.serieCharacters) { serieCharacter in
-                CharactersListRowView(serieCharacter: serieCharacter)
-                    .onAppear { viewModel.loadMoreContent(currentItem: serieCharacter) }
-                    .onTapGesture { navigate(.details(id: serieCharacter.id)) }
+            LazyVStack(spacing: 8) {
+                ForEach(viewModel.serieCharacters) { serieCharacter in
+                    row(character: serieCharacter)
+                }
             }
         }
         .padding(EdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16))
+    }
+
+    private func row(character: SerieCharacter) -> some View {
+        Group {
+            CharactersListRowView(serieCharacter: character)
+                .contentShape(Rectangle())
+                .onAppear { viewModel.loadMoreContent(currentItem: character) }
+                .onTapGesture { navigate(.details(id: character.id)) }
+            
+            if character.id != viewModel.serieCharacters.last?.id {
+                Divider()
+            }
+        }
     }
 }

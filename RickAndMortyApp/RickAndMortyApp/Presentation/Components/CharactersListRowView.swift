@@ -22,6 +22,7 @@ struct CharactersListRowView: View {
             content()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .contentShape(Rectangle())
     }
 
     private func image() -> some View {
@@ -51,8 +52,12 @@ struct CharactersListRowView: View {
                 Text(serieCharacter.gender.localized)
 
                 if serieCharacter.isFavorite {
+
                     Divider().frame(height: 12)
+
                     Image(systemName: "heart.fill")
+                        .foregroundStyle(Color.mutantPink)
+                        .frame(width: 12, height: 12)
                 }
             }
             .AppFont(.Roboto(12, weight: .light), color: .lightGray)
