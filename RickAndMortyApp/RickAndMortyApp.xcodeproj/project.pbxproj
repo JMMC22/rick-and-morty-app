@@ -49,12 +49,13 @@
 		B57143212C8836B7001CDFEC /* DatasourcesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143202C8836B7001CDFEC /* DatasourcesAssembly.swift */; };
 		B57143232C883706001CDFEC /* RepositoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143222C883706001CDFEC /* RepositoriesAssembly.swift */; };
 		B57143252C883792001CDFEC /* UseCasesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143242C883792001CDFEC /* UseCasesAssembly.swift */; };
+		B57143302C884739001CDFEC /* SerieCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571432F2C884739001CDFEC /* SerieCharacterGender.swift */; };
 		B57143272C883B1D001CDFEC /* ViewModelsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143262C883B1D001CDFEC /* ViewModelsAssembly.swift */; };
 		B57143292C883B57001CDFEC /* ViewsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143282C883B57001CDFEC /* ViewsAssembly.swift */; };
-		B571432B2C884036001CDFEC /* SerieCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571432A2C884036001CDFEC /* SerieCharacterGender.swift */; };
 		B571432E2C884350001CDFEC /* CharactersListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571432D2C884350001CDFEC /* CharactersListRowView.swift */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
+		B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */; };
 		B59C27E82C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */; };
 		B59C27EC2C8741E300D2D01A /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27EB2C8741E300D2D01A /* UserDefaultsError.swift */; };
 		B59C27EE2C876FD000D2D01A /* FavoritesCharactersRepository .swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27ED2C876FD000D2D01A /* FavoritesCharactersRepository .swift */; };
@@ -130,12 +131,13 @@
 		B57143202C8836B7001CDFEC /* DatasourcesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasourcesAssembly.swift; sourceTree = "<group>"; };
 		B57143222C883706001CDFEC /* RepositoriesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesAssembly.swift; sourceTree = "<group>"; };
 		B57143242C883792001CDFEC /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
+		B571432F2C884739001CDFEC /* SerieCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieCharacterGender.swift; sourceTree = "<group>"; };
 		B57143262C883B1D001CDFEC /* ViewModelsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsAssembly.swift; sourceTree = "<group>"; };
 		B57143282C883B57001CDFEC /* ViewsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsAssembly.swift; sourceTree = "<group>"; };
-		B571432A2C884036001CDFEC /* SerieCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieCharacterGender.swift; sourceTree = "<group>"; };
 		B571432D2C884350001CDFEC /* CharactersListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListRowView.swift; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequestFilter.swift; sourceTree = "<group>"; };
 		B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCharactersLocalDatasource.swift; sourceTree = "<group>"; };
 		B59C27EB2C8741E300D2D01A /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
 		B59C27ED2C876FD000D2D01A /* FavoritesCharactersRepository .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesCharactersRepository .swift"; sourceTree = "<group>"; };
@@ -309,7 +311,9 @@
 			isa = PBXGroup;
 			children = (
 				B59C27F12C87808900D2D01A /* AppError.swift */,
+				B59C27E02C87292600D2D01A /* CharactersRequestFilter.swift */,
 				B553AC392C8710DC0069C7CB /* SerieCharacter.swift */,
+				B571432F2C884739001CDFEC /* SerieCharacterGender.swift */,
 				B553AC3B2C8711440069C7CB /* SerieCharacterOrigin.swift */,
 				B571432A2C884036001CDFEC /* SerieCharacterGender.swift */,
 			);
@@ -639,6 +643,7 @@
 				B59C27F02C87701400D2D01A /* DefaultFavoritesCharactersRepository.swift in Sources */,
 				B571432B2C884036001CDFEC /* SerieCharacterGender.swift in Sources */,
 				B553ABF42C86FF360069C7CB /* ContentView.swift in Sources */,
+				B59C27E12C87292600D2D01A /* CharactersRequestFilter.swift in Sources */,
 				B59C27EE2C876FD000D2D01A /* FavoritesCharactersRepository .swift in Sources */,
 				B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */,
 				B57143272C883B1D001CDFEC /* ViewModelsAssembly.swift in Sources */,
@@ -648,6 +653,7 @@
 				B5C6D5C52C8829C10065AFEA /* Colors.swift in Sources */,
 				B553AC2A2C8707A30069C7CB /* RickAndMortyEndpoint.swift in Sources */,
 				B59C27EC2C8741E300D2D01A /* UserDefaultsError.swift in Sources */,
+				B57143302C884739001CDFEC /* SerieCharacterGender.swift in Sources */,
 				B553AC232C87033B0069C7CB /* RequestError.swift in Sources */,
 				B553AC1F2C8703270069C7CB /* Endpoint.swift in Sources */,
 				B553AC422C87144B0069C7CB /* DefaultCharactersRepository.swift in Sources */,

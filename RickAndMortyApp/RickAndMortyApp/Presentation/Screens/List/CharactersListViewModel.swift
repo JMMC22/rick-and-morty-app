@@ -26,7 +26,7 @@ class CharactersListViewModel: ObservableObject {
 extension CharactersListViewModel {
 
     func fetchCharacters(page: Int) async {
-        let result = await fetchCharacters.execute(page: page)
+        let result = await fetchCharacters.execute(page: page, gender: nil)
         
         switch result {
         case .success(let serieCharacters):
