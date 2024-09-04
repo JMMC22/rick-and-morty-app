@@ -6,30 +6,167 @@
 //
 
 import XCTest
+@testable import RickAndMortyApp
 
 final class CharactersRemoteDatasourceTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_fetchCharacters_success_when_httpclient_success_and_response_is_correct() async throws {
+        // GIVEN
+        let data = """
+        {
+          "data": {
+            "characters": {
+              "results": [
+                {
+                  "id": "41",
+                  "name": "Big Boobed Waitress",
+                  "status": "Alive",
+                  "species": "Mythological Creature",
+                  "gender": "Female",
+                  "origin": {
+                    "name": "Fantasy World"
+                  },
+                  "image": "www.image.com"
+                },
+                {
+                  "id": "42",
+                  "name": "Big Head Morty",
+                  "status": "unknown",
+                  "species": "Human",
+                  "gender": "Male",
+                  "origin": {
+                    "name": "unknown"
+                  },
+                  "image": "www.image.com"
+                }]
+                }
+            }
         }
+        """.data(using: .utf8)
+
+        let expectedResult = SerieCharactersResponseDTO.mockedData
+        let stub = HTTPCLientStub(result: .success(data!))
+        let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
+
+        // THEN
+        let capturedResult = await sut.fetchCharacters(page: 1, gender: nil)
+
+        // WHEN
+        let result = try XCTUnwrap(capturedResult.get())
+        XCTAssertEqual(result, expectedResult)
     }
 
+    func test_fetchCharacters_fail_when_httpclient_fail() async throws {
+        let stub = HTTPCLientStub(result: .failure(.unauthorized))
+        let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
+
+        // THEN
+        let capturedResult = await sut.fetchCharacters(page: 1, gender: nil)
+
+        // WHEN
+        guard case .failure(let error) = capturedResult else {
+            XCTFail("Expected failure, got success")
+            return
+        }
+
+        XCTAssertEqual(error, .unauthorized)
+    }
+
+    func test_fetchCharacters_faile_when_httpclient_success_and_response_is_incorrect() async throws {
+        // GIVEN
+        let data = """
+        {
+          "data": {
+            "seriesCharacters": { }
+            }
+        }
+        """.data(using: .utf8)
+
+        let stub = HTTPCLientStub(result: .success(data!))
+        let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
+
+        // THEN
+        let capturedResult = await sut.fetchCharacters(page: 1, gender: nil)
+
+        // WHEN
+        guard case .failure(let error) = capturedResult else {
+            XCTFail("Expected failure, got success")
+            return
+        }
+
+        XCTAssertEqual(error, .decode)
+    }
+
+    func test_fetchCharacter_success_when_httpclient_success_and_response_is_correct() async throws {
+        // GIVEN
+        let data = """
+        {
+          "data": {
+            "character": {
+                  "id": "41",
+                  "name": "Big Boobed Waitress",
+                  "status": "Alive",
+                  "species": "Mythological Creature",
+                  "gender": "Female",
+                  "origin": {
+                    "name": "Fantasy World"
+                  },
+                  "image": "www.image.com"
+                }
+            }
+        }
+        """.data(using: .utf8)
+
+        let expectedResult = SerieCharacterDetailsResponseDTO.mockedData
+        let stub = HTTPCLientStub(result: .success(data!))
+        let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
+
+        // THEN
+        let capturedResult = await sut.fetchCharacter(id: "")
+
+        // WHEN
+        let result = try XCTUnwrap(capturedResult.get())
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    func test_fetchCharacter_fail_when_httpclient_fail() async throws {
+        let stub = HTTPCLientStub(result: .failure(.unauthorized))
+        let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
+
+        // THEN
+        let capturedResult = await sut.fetchCharacter(id: "")
+
+        // WHEN
+        guard case .failure(let error) = capturedResult else {
+            XCTFail("Expected failure, got success")
+            return
+        }
+
+        XCTAssertEqual(error, .unauthorized)
+    }
+
+    func test_fetchCharacter_faile_when_httpclient_success_and_response_is_incorrect() async throws {
+        // GIVEN
+        let data = """
+        {
+          "data": {
+            "seriesCharacters": { }
+            }
+        }
+        """.data(using: .utf8)
+
+        let stub = HTTPCLientStub(result: .success(data!))
+        let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
+
+        // THEN
+        let capturedResult = await sut.fetchCharacter(id: "")
+
+        // WHEN
+        guard case .failure(let error) = capturedResult else {
+            XCTFail("Expected failure, got success")
+            return
+        }
+
+        XCTAssertEqual(error, .decode)
+    }
 }
