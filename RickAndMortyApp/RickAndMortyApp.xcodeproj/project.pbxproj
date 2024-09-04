@@ -42,6 +42,8 @@
 		B571430C2C882FB9001CDFEC /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57142F92C882F21001CDFEC /* Roboto-ThinItalic.ttf */; };
 		B571430E2C883032001CDFEC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571430D2C883032001CDFEC /* Fonts.swift */; };
 		B57143102C88309A001CDFEC /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571430F2C88309A001CDFEC /* AppFont.swift */; };
+		B57143142C883124001CDFEC /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143132C883124001CDFEC /* CharactersListView.swift */; };
+		B57143162C88312C001CDFEC /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57143152C88312C001CDFEC /* CharactersListViewModel.swift */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
 		B59C27E82C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */; };
@@ -113,6 +115,8 @@
 		B57143002C882F52001CDFEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B571430D2C883032001CDFEC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		B571430F2C88309A001CDFEC /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		B57143132C883124001CDFEC /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
+		B57143152C88312C001CDFEC /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCharactersLocalDatasource.swift; sourceTree = "<group>"; };
@@ -345,6 +349,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B57143112C88310E001CDFEC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B57143122C883115001CDFEC /* List */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B57143122C883115001CDFEC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B57143132C883124001CDFEC /* CharactersListView.swift */,
+				B57143152C88312C001CDFEC /* CharactersListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		B59C27D92C8724CB00D2D01A /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +397,7 @@
 			children = (
 				B5C6D5C32C8829A90065AFEA /* DesignSystem */,
 				B5C6D5BE2C8828C40065AFEA /* Navigation */,
+				B57143112C88310E001CDFEC /* Screens */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -552,6 +574,7 @@
 				B59C27EE2C876FD000D2D01A /* FavoritesCharactersRepository .swift in Sources */,
 				B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */,
 				B553AC332C870E060069C7CB /* SerieCharacterDTO.swift in Sources */,
+				B57143162C88312C001CDFEC /* CharactersListViewModel.swift in Sources */,
 				B553AC3A2C8710DC0069C7CB /* SerieCharacter.swift in Sources */,
 				B5C6D5C52C8829C10065AFEA /* Colors.swift in Sources */,
 				B553AC2A2C8707A30069C7CB /* RickAndMortyEndpoint.swift in Sources */,
@@ -568,6 +591,7 @@
 				B59C27F52C8780B200D2D01A /* AppErrorMapper.swift in Sources */,
 				B553AC3F2C87129C0069C7CB /* CharactersRepository.swift in Sources */,
 				B553AC212C8703300069C7CB /* HttpClient.swift in Sources */,
+				B57143142C883124001CDFEC /* CharactersListView.swift in Sources */,
 				B553AC3C2C8711440069C7CB /* SerieCharacterOrigin.swift in Sources */,
 				B553ABF22C86FF360069C7CB /* RickAndMortyAppApp.swift in Sources */,
 				B5C6D5C22C8829230065AFEA /* AppCoordinatorView.swift in Sources */,
