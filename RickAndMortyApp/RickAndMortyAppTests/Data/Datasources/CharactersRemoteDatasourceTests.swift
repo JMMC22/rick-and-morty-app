@@ -48,10 +48,10 @@ final class CharactersRemoteDatasourceTests: XCTestCase {
         let stub = HTTPCLientStub(result: .success(data!))
         let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = await sut.fetchCharacters(page: 1, gender: nil)
 
-        // WHEN
+        // THEN
         let result = try XCTUnwrap(capturedResult.get())
         XCTAssertEqual(result, expectedResult)
     }
@@ -85,10 +85,10 @@ final class CharactersRemoteDatasourceTests: XCTestCase {
         let stub = HTTPCLientStub(result: .success(data!))
         let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = await sut.fetchCharacters(page: 1, gender: nil)
 
-        // WHEN
+        // THEN
         guard case .failure(let error) = capturedResult else {
             XCTFail("Expected failure, got success")
             return
@@ -121,10 +121,10 @@ final class CharactersRemoteDatasourceTests: XCTestCase {
         let stub = HTTPCLientStub(result: .success(data!))
         let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = await sut.fetchCharacter(id: "")
 
-        // WHEN
+        // THEN
         let result = try XCTUnwrap(capturedResult.get())
         XCTAssertEqual(result, expectedResult)
     }
@@ -133,10 +133,10 @@ final class CharactersRemoteDatasourceTests: XCTestCase {
         let stub = HTTPCLientStub(result: .failure(.unauthorized))
         let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = await sut.fetchCharacter(id: "")
 
-        // WHEN
+        // THEN
         guard case .failure(let error) = capturedResult else {
             XCTFail("Expected failure, got success")
             return
@@ -158,10 +158,10 @@ final class CharactersRemoteDatasourceTests: XCTestCase {
         let stub = HTTPCLientStub(result: .success(data!))
         let sut = DefaultCharactersRemoteDatasource(httpClient: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = await sut.fetchCharacter(id: "")
 
-        // WHEN
+        // THEN
         guard case .failure(let error) = capturedResult else {
             XCTFail("Expected failure, got success")
             return

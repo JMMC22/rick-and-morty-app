@@ -16,10 +16,10 @@ final class FavoritesCharactersLocalDatasourceTests: XCTestCase {
         let expectedResult = ["1", "41"]
         let sut = DefaultFavoritesCharactersLocalDatasource(localManager: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = sut.fetchFavoritesCharacters()
 
-        // WHEN
+        // THEN
         XCTAssertEqual(capturedResult, expectedResult)
     }
 
@@ -28,10 +28,10 @@ final class FavoritesCharactersLocalDatasourceTests: XCTestCase {
         let stub = UserDefaultsManagerStub(storage: [.favoritesCharacters: []])
         let sut = DefaultFavoritesCharactersLocalDatasource(localManager: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = sut.fetchFavoritesCharacters()
 
-        // WHEN
+        // THEN
         XCTAssertEqual(capturedResult, [])
     }
 
@@ -40,10 +40,10 @@ final class FavoritesCharactersLocalDatasourceTests: XCTestCase {
         let stub = UserDefaultsManagerStub(storage: [:])
         let sut = DefaultFavoritesCharactersLocalDatasource(localManager: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = sut.fetchFavoritesCharacters()
 
-        // WHEN
+        // THEN
         XCTAssertEqual(capturedResult, [])
     }
 
@@ -52,10 +52,10 @@ final class FavoritesCharactersLocalDatasourceTests: XCTestCase {
         let stub = UserDefaultsManagerStub(storage: [.favoritesCharacters: []])
         let sut = DefaultFavoritesCharactersLocalDatasource(localManager: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = sut.addFavoriteCharacter(id: "1")
 
-        // WHEN
+        // THEN
         XCTAssertTrue(capturedResult)
     }
     
@@ -64,10 +64,10 @@ final class FavoritesCharactersLocalDatasourceTests: XCTestCase {
         let stub = UserDefaultsManagerStub(storage: [.favoritesCharacters: ["1"]])
         let sut = DefaultFavoritesCharactersLocalDatasource(localManager: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = sut.addFavoriteCharacter(id: "1")
 
-        // WHEN
+        // THEN
         XCTAssertFalse(capturedResult)
     }
     
@@ -76,10 +76,10 @@ final class FavoritesCharactersLocalDatasourceTests: XCTestCase {
         let stub = UserDefaultsManagerStub(storage: [.favoritesCharacters: ["1"]])
         let sut = DefaultFavoritesCharactersLocalDatasource(localManager: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = sut.removeFavoriteCharacter(id: "1")
 
-        // WHEN
+        // THEN
         XCTAssertTrue(capturedResult)
     }
     
@@ -88,10 +88,10 @@ final class FavoritesCharactersLocalDatasourceTests: XCTestCase {
         let stub = UserDefaultsManagerStub(storage: [.favoritesCharacters: ["2"]])
         let sut = DefaultFavoritesCharactersLocalDatasource(localManager: stub)
 
-        // THEN
+        // WHEN
         let capturedResult = sut.removeFavoriteCharacter(id: "1")
 
-        // WHEN
+        // THEN
         XCTAssertFalse(capturedResult)
     }
 }
