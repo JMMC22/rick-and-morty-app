@@ -42,6 +42,7 @@
 		B571430C2C882FB9001CDFEC /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57142F92C882F21001CDFEC /* Roboto-ThinItalic.ttf */; };
 		B571430E2C883032001CDFEC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571430D2C883032001CDFEC /* Fonts.swift */; };
 		B57143102C88309A001CDFEC /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571430F2C88309A001CDFEC /* AppFont.swift */; };
+		B571431A2C883653001CDFEC /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B57143192C883653001CDFEC /* Swinject */; };
 		B59C27DB2C8724E500D2D01A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DA2C8724E500D2D01A /* UserDefaultsManager.swift */; };
 		B59C27DD2C8724FF00D2D01A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27DC2C8724FF00D2D01A /* UserDefaultsKey.swift */; };
 		B59C27E82C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C27E72C87347100D2D01A /* FavoritesCharactersLocalDatasource.swift */; };
@@ -131,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B571431A2C883653001CDFEC /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +418,9 @@
 			dependencies = (
 			);
 			name = RickAndMortyApp;
+			packageProductDependencies = (
+				B57143192C883653001CDFEC /* Swinject */,
+			);
 			productName = RickAndMortyApp;
 			productReference = B553ABEE2C86FF360069C7CB /* RickAndMortyApp.app */;
 			productType = "com.apple.product-type.application";
@@ -488,6 +493,9 @@
 				Base,
 			);
 			mainGroup = B553ABE52C86FF360069C7CB;
+			packageReferences = (
+				B57143182C883653001CDFEC /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = B553ABEF2C86FF360069C7CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -929,6 +937,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B57143182C883653001CDFEC /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B57143192C883653001CDFEC /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B57143182C883653001CDFEC /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B553ABE62C86FF360069C7CB /* Project object */;
 }
