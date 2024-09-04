@@ -32,6 +32,12 @@ extension SerieCharacterDTO: Equatable {
     }
 }
 
+extension SerieCharacter: Equatable {
+    public static func == (lhs: SerieCharacter, rhs: SerieCharacter) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 extension SerieCharacterDetailsResponseDTO: Equatable {
     public static func == (lhs: RickAndMortyApp.SerieCharacterDetailsResponseDTO, rhs: RickAndMortyApp.SerieCharacterDetailsResponseDTO) -> Bool {
         return lhs.data == rhs.data
