@@ -8,9 +8,9 @@
 import Foundation
 
 protocol FavoritesCharactersLocalDatasource {
-    func fetchFavoritesCharacters() -> Result<[String], UserDefaultsError>
-    func addFavoriteCharacter(id: String) -> Result<Bool, UserDefaultsError>
-    func removeFavoriteCharacter(id: String) -> Result<Bool, UserDefaultsError>
+    func fetchFavoritesCharacters() -> [String]
+    func addFavoriteCharacter(id: String) -> Bool
+    func removeFavoriteCharacter(id: String) -> Bool
 }
 
 class DefaultFavoritesCharactersLocalDatasource {
@@ -24,43 +24,37 @@ class DefaultFavoritesCharactersLocalDatasource {
 
 extension DefaultFavoritesCharactersLocalDatasource: FavoritesCharactersLocalDatasource {
 
-    func fetchFavoritesCharacters() -> Result<[String], UserDefaultsError> {
+    func fetchFavoritesCharacters() -> [String] {
         guard let result: [String] = localManager.get(for: .favoritesCharacters) else {
-            return .failure(.keyNotFound)
+            return []
         }
 
-        return .success(result)
+        return result
     }
 
-    func addFavoriteCharacter(id: String) -> Result<Bool, UserDefaultsError> {
-        let result = fetchFavoritesCharacters()
+    func addFavoriteCharacter(id: String) -> Bool {
+        var favorites = fetchFavoritesCharacters()
 
-        switch result {
-        case .success(var favorites):
-            favorites.append(id)
-            localManager.set(favorites, for: .favoritesCharacters)
-
-            return .success(true)
-        case .failure(let error):
-            return .failure(error)
+        guard !favorites.contains(id) else {
+            return false
         }
+
+        favorites.append(id)
+        localManager.set(favorites, for: .favoritesCharacters)
+
+        return true
     }
 
-    func removeFavoriteCharacter(id: String) -> Result<Bool, UserDefaultsError> {
-        let result = fetchFavoritesCharacters()
+    func removeFavoriteCharacter(id: String) -> Bool {
+        var favorites = fetchFavoritesCharacters()
 
-        switch result {
-        case .success(var favorites):
-            guard let index = favorites.firstIndex(where: { $0 == id }) else {
-                return .failure(.unknown)
-            }
-
-            favorites.remove(at: index)
-            localManager.set(favorites, for: .favoritesCharacters)
-
-            return .success(true)
-        case .failure(let error):
-            return .failure(error)
+        guard let index = favorites.firstIndex(where: { $0 == id }) else {
+            return false
         }
+
+        favorites.remove(at: index)
+        localManager.set(favorites, for: .favoritesCharacters)
+
+        return true
     }
 }

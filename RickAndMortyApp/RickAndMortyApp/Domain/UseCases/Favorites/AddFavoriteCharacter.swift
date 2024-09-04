@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AddFavoriteCharacter {
-    func execute(id: String) -> Result<Bool, AppError>
+    func execute(id: String) -> Bool
 }
 
 class DefaultAddFavoriteCharacter {
@@ -22,7 +22,7 @@ class DefaultAddFavoriteCharacter {
 
 extension DefaultAddFavoriteCharacter: AddFavoriteCharacter {
 
-    func execute(id: String) -> Result<Bool, AppError> {
+    func execute(id: String) -> Bool {
         return favoritesRepository.addFavoriteCharacter(id: id)
     }
 }

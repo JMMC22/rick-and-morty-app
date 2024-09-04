@@ -57,10 +57,16 @@ struct CharacterDetailsContainerView: View {
         VStack(alignment: .leading, spacing: 12) {
 
             HStack {
+
                 Text(viewModel.serieCharacter?.name ?? "")
                     .AppFont(.Roboto(16, weight: .bold), color: .darkGray)
+
                 Spacer()
-                Image(systemName: "heart")
+
+                Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+                    .onTapGesture {
+                        viewModel.updateFavoriteSerieCharacter()
+                    }
             }
 
             VStack(alignment: .leading, spacing: 4) {

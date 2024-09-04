@@ -34,8 +34,7 @@ final class RepositoriesAssembly: Assembly {
                 fatalError("FavoritesCharactersLocalDatasource dependency could not be resolved")
             }
 
-            return DefaultFavoritesCharactersRepository(localDatasource: favoritesDatasource,
-                                                        errorMapper: AppErrorMapper())
+            return DefaultFavoritesCharactersRepository(localDatasource: favoritesDatasource)
         }
     }
 }

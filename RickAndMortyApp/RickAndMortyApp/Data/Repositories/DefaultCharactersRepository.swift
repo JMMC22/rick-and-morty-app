@@ -26,14 +26,11 @@ extension DefaultCharactersRepository: CharactersRepository {
 
     func fetchCharacters(page: Int, gender: SerieCharacterGender?) async -> Result<[SerieCharacter], AppError> {
         let result = await remoteDatasource.fetchCharacters(page: page, gender: gender?.rawValue)
+        let favorites = favoritesDatasource.fetchFavoritesCharacters()
 
         switch result {
         case .success(let response):
             let characters = response.data.characters.results.map({ $0.toDomain() })
-
-            guard let favorites = try? favoritesDatasource.fetchFavoritesCharacters().get() else {
-                return .success(characters)
-            }
 
             let mappedCharacters = characters.map { character in
                 var tempCharacter = character
@@ -49,14 +46,11 @@ extension DefaultCharactersRepository: CharactersRepository {
 
     func fetchCharacter(id: String) async -> Result<SerieCharacter, AppError> {
         let result = await remoteDatasource.fetchCharacter(id: id)
+        let favorites = favoritesDatasource.fetchFavoritesCharacters()
 
         switch result {
         case .success(let response):
             var character = response.data.character.toDomain()
-
-            guard let favorites = try? favoritesDatasource.fetchFavoritesCharacters().get() else {
-                return .success(character)
-            }
 
             character.isFavorite = favorites.contains(character.id)
 

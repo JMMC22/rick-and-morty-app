@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RemoveFavoriteCharacter {
-    func execute(id: String) -> Result<Bool, AppError>
+    func execute(id: String) -> Bool
 }
 
 class DefaultRemoveFavoriteCharacter {
@@ -22,7 +22,7 @@ class DefaultRemoveFavoriteCharacter {
 
 extension DefaultRemoveFavoriteCharacter: RemoveFavoriteCharacter {
 
-    func execute(id: String) -> Result<Bool, AppError> {
+    func execute(id: String) -> Bool {
         return favoritesRepository.removeFavoriteCharacter(id: id)
     }
 }

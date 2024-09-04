@@ -10,6 +10,7 @@ import Foundation
 class CharacterDetailsViewModel: ObservableObject {
 
     @Published var serieCharacter: SerieCharacter?
+    @Published var isFavorite: Bool = false
 
     private let id: String
     private let fetchCharacter: FetchCharacter
@@ -49,10 +50,44 @@ extension CharacterDetailsViewModel {
 
         DispatchQueue.main.async {
             self.serieCharacter = serieCharacter
+            self.isFavorite = serieCharacter.isFavorite
         }
     }
 
     private func handleFetchCharacterFailure(error: AppError) {
         print("||ERROR|| fetchCharacter error: \(error.localizedDescription)")
+    }
+}
+
+extension CharacterDetailsViewModel {
+
+    func updateFavoriteSerieCharacter() {
+        if isFavorite {
+            removeFavoriteSerieCharacter()
+        } else {
+            addFavoriteSerieCharacter()
+        }
+    }
+    
+    private func addFavoriteSerieCharacter() {
+        let result = addFavoriteCharacter.execute(id: id)
+
+        if result {
+            updateFavoriteUI(isFavorite: true)
+        }
+    }
+
+    private func removeFavoriteSerieCharacter() {
+        let result = removeFavoriteCharacter.execute(id: id)
+
+        if result {
+            updateFavoriteUI(isFavorite: false)
+        }
+    }
+
+    private func updateFavoriteUI(isFavorite: Bool) {
+        DispatchQueue.main.async {
+            self.isFavorite = isFavorite
+        }
     }
 }
