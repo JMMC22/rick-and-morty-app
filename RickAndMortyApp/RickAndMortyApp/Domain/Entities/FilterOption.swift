@@ -21,5 +21,6 @@ struct FilterOption: Hashable, Equatable {
         return lhs.key == rhs.key && lhs.value == rhs.value
     }
 
-    static let all = FilterOption(key: "all", value: "Todos")
+    static let all = FilterOption(key: "all",
+                                  value: String(localized: "filter.all.value"))
 }

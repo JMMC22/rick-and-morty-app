@@ -32,7 +32,6 @@ extension SerieCharacterGender {
 
 extension SerieCharacterGender {
     static func buildFilterOptions() -> [FilterOption] {
-        let genreFilters = SerieCharacterGender.allCases.map({ FilterOption(key: $0.rawValue, value: $0.localized )})
-        return [FilterOption.all] + genreFilters
+        return SerieCharacterGender.allCases.map({ FilterOption(key: $0.rawValue, value: $0.localized )})
     }
 }

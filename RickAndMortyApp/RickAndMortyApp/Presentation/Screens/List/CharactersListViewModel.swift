@@ -18,14 +18,14 @@ class CharactersListViewModel: ObservableObject {
     private var nextPage: Int = 1
     private var didReachedEnd: Bool = false
 
-    var filters: [FilterOption]
+    let filters: [FilterOption]
 
     init(fetchCharacters: FetchCharacters,
          getFavoritesCharactersIds: GetFavoritesCharactersIds) {
         self.fetchCharacters = fetchCharacters
         self.getFavoritesCharactersIds = getFavoritesCharactersIds
-        self.filters = SerieCharacterGender.buildFilterOptions()
-        self.selectedFilter = FilterOption.all
+        self.filters = CharactersListFilter.buildFilters()
+        self.selectedFilter = filters.first ?? FilterOption.all
     }
 
     func viewDidLoad() async {
@@ -124,7 +124,7 @@ extension CharactersListViewModel {
     }
 
     private func isAllFilterSelected() -> Bool {
-        return selectedFilter.key == FilterOption.all.key
+        return selectedFilter.key == CharactersListFilter.all.key
     }
 }
 
