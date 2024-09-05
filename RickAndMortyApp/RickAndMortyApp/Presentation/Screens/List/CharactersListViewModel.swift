@@ -11,6 +11,7 @@ class CharactersListViewModel: ObservableObject {
 
     @Published var serieCharacters: [SerieCharacter] = []
     @Published var selectedFilter: FilterOption
+    @Published var error: AppError?
 
     private let fetchCharacters: FetchCharacters
     private let getFavoritesCharactersIds: GetFavoritesCharactersIds
@@ -78,7 +79,9 @@ extension CharactersListViewModel {
     }
 
     private func handleFetchCharactersFailure(error: AppError) {
-        print("||ERROR|| fetchCharacters error: \(error.localizedDescription)")
+        DispatchQueue.main.async {
+            self.error = error
+        }
     }
 }
 
