@@ -25,18 +25,20 @@ struct HorizontalFilterItemView: View {
     }
 
     private var backgroundColor: Color {
-        isSelected ? Color.lightGray.opacity(0.4) : Color.white
+        isSelected ? Color.textLightGray.opacity(0.4) : Color.white
+    }
+
+    private var backgroundShape: some View {
+        RoundedRectangle(cornerRadius: 16)
+            .fill(backgroundColor)
+            .strokeBorder(Color.textDarkGray, lineWidth: 1)
     }
 
     var body: some View {
         Text(item.value)
-            .AppFont(.Roboto(14, weight: textWeight), color: .darkGray)
+            .AppFont(.Roboto(14, weight: textWeight), color: .textDarkGray)
             .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-            .background(
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(backgroundColor)
-                    .strokeBorder(Color.darkGray, lineWidth: 1)
-            )
+            .background(backgroundShape)
             .onTapGesture { action() }
     }
 }

@@ -66,7 +66,7 @@ struct CharacterDetailsContainerView: View {
         HStack {
 
             Text(viewModel.serieCharacter?.name ?? "")
-                .AppFont(.Roboto(24, weight: .bold), color: .darkGray)
+                .AppFont(.Roboto(24, weight: .bold), color: .textDarkGray)
 
             Spacer()
 

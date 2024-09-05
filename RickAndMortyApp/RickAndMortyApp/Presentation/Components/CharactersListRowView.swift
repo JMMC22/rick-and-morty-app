@@ -40,27 +40,32 @@ struct CharactersListRowView: View {
 
     private func content() -> some View {
         VStack(alignment: .leading, spacing: 4) {
+
             Text(serieCharacter.name)
-                .AppFont(.Roboto(12, weight: .bold), color: .darkGray)
+                .AppFont(.Roboto(12, weight: .bold), color: .textDarkGray)
 
             HStack(spacing: 4) {
 
                 Text(serieCharacter.origin.name)
 
-                Divider().frame(height: 12)
+                divider()
 
                 Text(serieCharacter.gender.localized)
 
                 if serieCharacter.isFavorite {
 
-                    Divider().frame(height: 12)
+                    divider()
 
                     Image(systemName: "heart.fill")
                         .foregroundStyle(Color.mutantPink)
                         .frame(width: 12, height: 12)
                 }
             }
-            .AppFont(.Roboto(12, weight: .light), color: .lightGray)
+            .AppFont(.Roboto(12, weight: .light), color: .textLightGray)
         }
+    }
+    
+    private func divider() -> some View {
+        Divider().frame(height: 12)
     }
 }

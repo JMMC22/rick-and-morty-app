@@ -19,11 +19,13 @@ struct DetailsInformationRowView: View {
 
     var body: some View {
         HStack(spacing: 8) {
+
             Image(icon)
                 .resizable()
                 .frame(width: 16, height: 16)
+
             Text(text ?? "")
         }
-        .AppFont(.Roboto(16, weight: .regular), color: .darkGray)
+        .AppFont(.Roboto(16, weight: .regular), color: .textDarkGray)
     }
 }
