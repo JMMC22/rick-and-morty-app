@@ -27,8 +27,4 @@ class UserDefaultsManagerStub: UserDefaultsManager {
     func remove(for key: UserDefaultsKey) {
         storage.removeValue(forKey: key)
     }
-
-    func object(for key: UserDefaultsKey) -> Any? {
-        return storage[key]
-    }
 }
