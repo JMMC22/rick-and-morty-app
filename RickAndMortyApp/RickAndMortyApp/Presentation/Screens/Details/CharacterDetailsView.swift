@@ -43,17 +43,24 @@ struct CharacterDetailsContainerView: View {
     }
 
     private func image() -> some View {
-        AsyncImage(url: viewModel.serieCharacter?.imageURL) { image in
-            image
-                .resizable()
-                .scaledToFill()
-                .frame(height: 300)
-        } placeholder: {
-            Rectangle()
-                .fill(.textLightGray.opacity(0.4))
-                .frame(height: 300)
+        CachedImage(url: viewModel.serieCharacter?.imageURL) { phase in
+            switch phase {
+            case .success(let image):
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 300)
+            default:
+                Rectangle()
+                    .fill(.textLightGray.opacity(0.2))
+                    .frame(height: 300)
+            }
         }
         .clipShape(RoundedRectangle(cornerRadius: 20))
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.textLightGray.opacity(0.4), lineWidth: 2)
+        )
     }
 
     private func content() -> some View {
