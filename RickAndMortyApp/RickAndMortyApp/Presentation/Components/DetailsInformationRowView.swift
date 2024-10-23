@@ -22,10 +22,10 @@ struct DetailsInformationRowView: View {
 
             Image(icon)
                 .resizable()
-                .frame(width: 16, height: 16)
+                .frame(width: 24, height: 24)
 
             Text(text ?? "")
         }
-        .AppFont(.Roboto(16, weight: .regular), color: .textDarkGray)
+        .AppFont(.Roboto(16, weight: .bold), color: .textDarkGray)
     }
 }

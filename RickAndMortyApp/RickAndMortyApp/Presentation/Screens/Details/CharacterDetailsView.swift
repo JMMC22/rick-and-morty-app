@@ -100,5 +100,9 @@ struct CharacterDetailsContainerView: View {
             RoundedRectangle(cornerRadius: 20)
                 .fill(.textLightGray.opacity(0.1))
         )
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.textLightGray.opacity(0.4), lineWidth: 2)
+        )
     }
 }
