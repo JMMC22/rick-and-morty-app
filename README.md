@@ -14,7 +14,16 @@ Rick And Morty App is an application built with SwiftUI to display a list of cha
 - Gender filtering.
 - Detailed view of each character with the option to mark them as a favorite.
 - Favorite characters are persisted in a database and restored upon app launch.
-- Supports deep links (`alkimiirickandmorty://character/{id}`).
+- Supports deep links (`jmrickandmorty://character/{id}`).
+
+## 🎯 Next Steps
+
+- Implement caching for remote data by storing it in a local database (Core Data). Using reactive programming, first display the data from the local database, then update it with new data as it becomes available
+- Implement searcher.
+- Improve Unit Tests.
+- Improve GraphQL requests.
+- Implement UI and snapshots Tests.
+- Implement loading state (Shimmer).
 
 ## 🛠️ Technologies
 
@@ -30,9 +39,9 @@ Rick And Morty App is an application built with SwiftUI to display a list of cha
 
 Here are some screenshots of the app in action:
 
-| Lis View                             | Details View                           
+| List View                             | Details View                           
 |--------------------------------------|---------------------------------------|
-| ![List View](https://github.com/user-attachments/assets/bd60111b-b55c-4bc3-848b-80e3c0a53045) | ![Details View](https://github.com/user-attachments/assets/b788f8a9-8198-41af-83ba-2c3698fee440) |
+| ![Simulator Screenshot - iPhone 16 Pro - 2024-10-23 at 15 28 10](https://github.com/user-attachments/assets/17cde92b-e7b3-4974-bacd-cadac8877a3d) | ![Simulator Screenshot - iPhone 16 Pro - 2024-10-23 at 15 28 14](https://github.com/user-attachments/assets/208fb891-4b0c-493e-9657-ca6d556d5f3b) |
 
 
 ## License
