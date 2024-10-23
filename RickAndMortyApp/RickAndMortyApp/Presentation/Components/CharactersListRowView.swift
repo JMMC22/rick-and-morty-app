@@ -35,10 +35,14 @@ struct CharactersListRowView: View {
                     .clipShape(Circle())
             default:
                 Circle()
-                    .fill(.textLightGray.opacity(0.4))
+                    .fill(.textLightGray.opacity(0.2))
                     .frame(width: 50, height: 50)
             }
         }
+        .overlay(
+            Circle()
+                .stroke(Color.textLightGray.opacity(0.4), lineWidth: 2)
+        )
     }
 
     private func content() -> some View {
