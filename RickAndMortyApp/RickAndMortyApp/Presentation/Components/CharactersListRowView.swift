@@ -26,15 +26,18 @@ struct CharactersListRowView: View {
     }
 
     private func image() -> some View {
-        AsyncImage(url: serieCharacter.imageURL) { image in
-            image
-                .resizable()
-                .frame(width: 50, height: 50)
-                .clipShape(Circle())
-        } placeholder: {
-            Circle()
-                .fill(.textLightGray.opacity(0.4))
-                .frame(width: 50, height: 50)
+        CachedImage(url: serieCharacter.imageURL) { phase in
+            switch phase {
+            case .success(let image):
+                image
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .clipShape(Circle())
+            default:
+                Circle()
+                    .fill(.textLightGray.opacity(0.4))
+                    .frame(width: 50, height: 50)
+            }
         }
     }
 

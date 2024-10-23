@@ -11,6 +11,7 @@ class CharactersListViewModel: ObservableObject {
 
     @Published var serieCharacters: [SerieCharacter] = []
     @Published var selectedFilter: FilterOption
+    @Published var isLoading: Bool = false
     @Published var error: AppError?
 
     private let fetchCharacters: FetchCharacters
@@ -31,6 +32,7 @@ class CharactersListViewModel: ObservableObject {
 
     func viewDidLoad() async {
         if serieCharacters.isEmpty {
+            isLoading(true)
             await fetchCharacters()
         } else {
             refreshCharacters()
@@ -81,6 +83,7 @@ extension CharactersListViewModel {
     private func handleFetchCharactersFailure(error: AppError) {
         DispatchQueue.main.async {
             self.error = error
+            self.isLoading(false)
         }
     }
 }
@@ -90,8 +93,10 @@ extension CharactersListViewModel {
 
     private func processCharacters(_ characters: [SerieCharacter]) {
         let mappedCharacters = mapCharacters(characters)
+
         DispatchQueue.main.async {
             self.serieCharacters.append(contentsOf: mappedCharacters)
+            self.isLoading(false)
         }
     }
 
@@ -144,5 +149,14 @@ extension CharactersListViewModel {
     private func resetPagination() {
         nextPage = 1
         didReachedEnd = false
+    }
+}
+
+// MARK: - Loading
+extension CharactersListViewModel {
+    private func isLoading(_ value: Bool) {
+        DispatchQueue.main.async {
+            self.isLoading = value
+        }
     }
 }
