@@ -25,7 +25,7 @@ struct HorizontalFilterItemView: View {
     }
 
     private var backgroundColor: Color {
-        isSelected ? Color.textLightGray.opacity(0.4) : Color.white
+        isSelected ? Color.textLightGray.opacity(0.2) : Color.white
     }
 
     private var backgroundShape: some View {
